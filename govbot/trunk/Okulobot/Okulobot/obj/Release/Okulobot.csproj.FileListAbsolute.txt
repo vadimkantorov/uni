@@ -1,0 +1,5 @@
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\bin\Release\Okulobot.exe
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\bin\Release\Okulobot.pdb
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\obj\Release\ResolveAssemblyReference.cache
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\obj\Release\Okulobot.exe
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\obj\Release\Okulobot.pdb

@@ -1,0 +1,3314 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DCIMAP.GANS.Basic</name>
+    </assembly>
+    <members>
+        <member name="T:DCIMAP.GANS.Basic.ComponentArray">
+            <summary>
+            A class that represents an array of childs of component
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentArray.InnerList">
+            <summary>
+            Internal data structure to store childs
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentArray.owner">
+            <summary>
+            A component which is an owner of array
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.#ctor(DCIMAP.GANS.Basic.Component)">
+            <summary>
+            Creates an instance of ComponentArray class
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#IList{DCIMAP#GANS#Basic#Component}#IndexOf(DCIMAP.GANS.Basic.Component)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#IList{DCIMAP#GANS#Basic#Component}#Insert(System.Int32,DCIMAP.GANS.Basic.Component)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#IList{DCIMAP#GANS#Basic#Component}#RemoveAt(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#ICollection{DCIMAP#GANS#Basic#Component}#Add(DCIMAP.GANS.Basic.Component)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#ICollection{DCIMAP#GANS#Basic#Component}#Clear">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#ICollection{DCIMAP#GANS#Basic#Component}#Contains(DCIMAP.GANS.Basic.Component)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#ICollection{DCIMAP#GANS#Basic#Component}#CopyTo(DCIMAP.GANS.Basic.Component[],System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#ICollection{DCIMAP#GANS#Basic#Component}#Remove(DCIMAP.GANS.Basic.Component)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArray.WidenCollection(System.Int32)">
+            <summary>
+            If necessary, widen collection so index element is aviable
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentArray.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentArray.Item(System.Int32)">
+            <summary>
+            Gets or sets a component at specified index
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentArray.System#Collections#Generic#ICollection{DCIMAP#GANS#Basic#Component}#IsReadOnly">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ColorModel">
+            <summary>
+            Color models of image (used for fetching vectors)
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ColorModel.Grayscale">
+            <summary>
+            Grayscale color model
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ColorModel.HSB">
+            <summary>
+            HSB color model (Hue-Saturation-Brightness)
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ColorModel.RGB">
+            <summary>
+            RGB color model
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ColorModel.HSBRBG">
+            <summary>
+            Mesh model, with both RBG and HSB 
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.FastBitmap">
+            <summary>
+            This class is a simple representation of bitmap with a byte array of colors. Working with this class is faster, than with Bitmap
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.FastBitmap.data">
+            <summary>
+            Byte array for colors in bitmap
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.FastBitmap.height">
+            <summary>
+            height of bitmap
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.FastBitmap.rowSize">
+            <summary>
+            A size of one bitmap's row. It is the less number, which dividable to 4, and greater or equal width*3
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.FastBitmap.width">
+            <summary>
+            Width of bitmap
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Builds new empty <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> which size is <paramref name="width"/> x <paramref name="height"/>
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.GetOffset(System.Int32,System.Int32)">
+            <summary>
+            Gets an offset if byte array, from which pixel (x,y) is encoded.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.GetPixel(System.Int32,System.Int32)">
+            <summary>
+            Simmilar to <see cref="M:System.Drawing.Bitmap.GetPixel(System.Int32,System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.SetPixel(System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>
+            Simmilar to <see cref="M:System.Drawing.Bitmap.SetPixel(System.Int32,System.Int32,System.Drawing.Color)"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.CloneBitmap(DCIMAP.GANS.Basic.FastBitmap)">
+            <summary>
+            Clones bitmap to specified bitmap
+            </summary>
+            <param name="where"></param>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.CloneBitmap">
+            <summary>
+            Clones bitmap
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.ToBitmap">
+            <summary>
+            Converts this <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> to <see cref="T:System.Drawing.Bitmap"/>
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.FromBitmap(System.Drawing.Bitmap)">
+            <summary>
+            Converts <paramref name="bmp"/> <see cref="T:System.Drawing.Bitmap"/> to <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/>
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.ToBMPFile(System.String)">
+            <summary>
+            Saves this <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> to file <paramref name="filename"/>.
+            In BMP 24 b/pixel format.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.FromBMPStream(System.IO.Stream)">
+            <summary>
+            Loads <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> from <see cref="T:System.IO.Stream"/> <paramref name="str"/> with image in 24b/pixel BMP format.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.FromBMPFile(System.String)">
+            <summary>
+            Loads <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> from file <paramref name="filename"/> with image in 24b/pixel BMP format.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.FromFile(System.String)">
+            <summary>
+            Loads <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> from file <paramref name="filename"/>.
+            For BMP files in 24b/pixel mode it is better to use <see cref="M:DCIMAP.GANS.Basic.FastBitmap.FromBMPFile(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.ToBMPStream(System.IO.Stream)">
+            <summary>
+            Saves this <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> to <see cref="T:System.IO.Stream"/> <paramref name="str"/> in 24b/pixel BMP format.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.RGBVector(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts a color image into a vector. Vector have W*H*3 components (W is width, H is height). Each component is from 0 to 1, accordingly the RGB component is from 0 to 255.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.FloorRootDiv3(System.Int32)">
+            <summary>
+            Gets the floor of square root of 'size', divided by 3 [sqrt(size/3)].
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.HSBVector(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts a region of image into a vector using HSB scheme
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.GrayscaleVector(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Converts a grayscale image into a vector. Vector have W*H components (W is width, H is height). Each component is from 0 to 1, accordingly the grayscale component is from 0 to 255.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.FloorRoot(System.Int32)">
+            <summary>
+            Gets the floor of square root of 'size' [sqrt(size)]
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.Vector(System.Int32,System.Int32,System.Int32,System.Int32,DCIMAP.GANS.Basic.ColorModel)">
+            <summary>
+            Gets a vector of subimage, according to specified color model
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.VectorSize(System.Int32,DCIMAP.GANS.Basic.ColorModel)">
+            <summary>
+            Gets vector size for square subimage with specified size and color model 
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FastBitmap.CellSize(System.Int32,DCIMAP.GANS.Basic.ColorModel)">
+            <summary>
+            Gets a size of subimage from specified vector size and color model (reverse for <see cref="M:DCIMAP.GANS.Basic.FastBitmap.VectorSize(System.Int32,DCIMAP.GANS.Basic.ColorModel)"/>)
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.FastBitmap.Height">
+            <summary>
+            Height of bitmap
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.FastBitmap.Width">
+            <summary>
+            Width of bitmap
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.FastBitmap.RowSize">
+            <summary>
+            A size of one bitmap's row. It is the less number, which dividable to 4, and greater or equal width*3
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.FastBitmap.Data">
+            <summary>
+            Colors in bitmap.
+            The actual count of bytes for one row is equal to <see cref="P:DCIMAP.GANS.Basic.FastBitmap.RowSize"/>
+            The order of rows in this array is REVERSED, i.e. first row is encoded last, as in BMP-file.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.FastBitmap.Item(System.Int32,System.Int32)">
+            <summary>
+            Gets or sets specified pixel in bitmap
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningLog">
+            <summary>
+            Learning log (writer)
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningDriverComponent">
+            <summary>
+            A component of a learning griver
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.Component">
+            <summary>
+            A class that represents a component in system.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.#ctor">
+            <summary>
+            Creates an instance of component class
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.CheckCompatibility(DCIMAP.GANS.Basic.CompatibilityReport)">
+            <summary>
+            Override this method to add a compatibility checking here
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.OnBinding(DCIMAP.GANS.Basic.ComponentEventArgs)">
+            <summary>
+            Raises <see cref="E:DCIMAP.GANS.Basic.Component.BeforeBindingToTree"/> event
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.OnReleasing(DCIMAP.GANS.Basic.ComponentEventArgs)">
+            <summary>
+            Raises <see cref="E:DCIMAP.GANS.Basic.Component.BeforeReleaseFromTree"/> event
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.OnChildAdded(DCIMAP.GANS.Basic.ComponentEventArgs)">
+            <summary>
+            Raises <see cref="E:DCIMAP.GANS.Basic.Component.AfterChildAdded"/> event
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.OnChildRemoved(DCIMAP.GANS.Basic.ComponentEventArgs)">
+            <summary>
+            Raises <see cref="E:DCIMAP.GANS.Basic.Component.AfterChildRemoved"/> event
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Component.childs">
+            <summary>
+            Array of child of this component
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Component.controlComponent">
+            <summary>
+            Control component of system in which component is placed. 
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Component.parent">
+            <summary>
+            Parent of this component
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.BindToTree(DCIMAP.GANS.Basic.Component,System.Int32)">
+            <summary>
+            Binds component to parent. The sequnce of action is as follows:
+            0) Raises <see cref="E:DCIMAP.GANS.Basic.Component.BeforeBindingToTree"/> event.
+            1) If parent is in systemm, drives system in alteringmode.
+            2) Set up <see cref="P:DCIMAP.GANS.Basic.Component.Parent"/> field.
+            3) Add child into parent's childs collection.
+            4) If parent is in system, set up control component of system for component's subtree and change state to ComponentState.Inside 
+            5) Raise <see cref="E:DCIMAP.GANS.Basic.Component.AfterChildAdded"/> event of parent. This is actually done it <see cref="T:DCIMAP.GANS.Basic.ComponentArray"/> indexer, after setting field.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.ReleaseFromTree">
+            <summary>
+            Releases component from tree. The sequence of action is as folloews:
+            0) Raises <see cref="E:DCIMAP.GANS.Basic.Component.BeforeReleaseFromTree"/> event.
+            1) If exist <see cref="P:DCIMAP.GANS.Basic.Component.ControlComponent"/> then change it's mode to Alter
+            2) Recursively informs all subtrees that they was removed from main tree.
+            3) Removes <see cref="P:DCIMAP.GANS.Basic.Component.ControlComponent"/> for all childs if exists.
+            4) And change childs state to <see cref="F:DCIMAP.GANS.Basic.ComponentState.Outside"/>.
+            5) Removes <see cref="P:DCIMAP.GANS.Basic.Component.Parent"/>
+            6) Then raises <see cref="E:DCIMAP.GANS.Basic.Component.AfterChildRemoved"/> if exists. Actually it is done in <see cref="T:DCIMAP.GANS.Basic.ComponentArray"/> class, in indexer.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.ComponentRemoving">
+            <summary>
+            Recursively informs all subtrees that they was removed from main tree.
+            Removes <see cref="F:DCIMAP.GANS.Basic.Component.controlComponent"/> for all childs if exists.
+            And change childs state to <see cref="F:DCIMAP.GANS.Basic.ComponentState.Outside"/>.
+            Then raises <see cref="E:DCIMAP.GANS.Basic.Component.AfterChildRemoved"/> if exists.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Component.state">
+            <summary>
+            Current state of component
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.SetStateInternal(DCIMAP.GANS.Basic.ComponentState)">
+            <summary>
+            Sets a state without any actions
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.ComponentAdded">
+            <summary>
+            Occurs when component is placed into tree. Private data creation must be done here.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.SystemIsAssembled">
+            <summary>
+            Occurs when system is assembled and being driven into working mode. Compatibility checking is already done. Dependent data creation must be done here. 
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.PrepareToWork">
+            <summary>
+            Occurs when system is driven into working mode. Temporary data creation must be done here.
+            By default, this method only invockes CreateTemporaryData method, which creates all necessary data structure, and then InitTemporaryData, which fills this structure with initial values.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.PrepareToSave">
+            <summary>
+            Occurs when system is preparing to be saved. Temporary data must be applied here.
+            Be default, this method only invokes a FlushTemporaryData method, which should apply all temporary data and returns its structures to empty state.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.BackToWorkAfterSave">
+            <summary>
+            Occurs when system is saved. 
+            By default, it only invockes a InitTemporaryData method, which fills temporary data's structure with initial values.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.PrepareToAltering">
+            <summary>
+            Occurs when system is being driven into Altering mode. So, followed options are possible:
+            1) If component does not depends from other components, do nothing
+            2) If components just delete all dependent data and then create them again, do nothing. This method invoces DestroyDependentData by default
+            3) If components uses fine strategy and wants to know about which components was modified, this is a good plate to initialize required events
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.BackToWorkAfterAltering">
+            <summary>
+            Occurs, when component was in system before altering and now system is go back to work. Followed options are possible:
+            1) If component does not depends from other components, do nothing
+            2) If components just delete all dependent data and then create them again, do nothing. This method by default only invokes CreateDependentData method.
+            3) If components uses fine strategy and wants to know about which components was modified, override this method and add your functionality. DO NOT INVOKE base.BackFromAltering in that case
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.ComponentDeletedImmidiately">
+            <summary>
+            Occurs when component was added into system and then removed without system being driven into working mode. 
+            ByDefault, it invockes DestroyComponent method, which should free all resources
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.ComponentDeleted">
+            <summary>
+            Occurs when component was added, then system work for some time, and then component was removed.
+            Be default, it invockes Destroy Component method, which should free all resources
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.CreateDependentData">
+            <summary>
+            Creation of dependent data should be done here
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.CreateTemporaryData">
+            <summary>
+            Creation of temporary data structures should be done here
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.InitTemporaryData">
+            <summary>
+            Initialization temporary data with initial values should be done here
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.FlushTemporaryData">
+            <summary>
+            Applying temporary data should be done here
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.CreatePrivateData">
+            <summary>
+            Component initialization should be done here
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.DestroyPrivateData">
+            <summary>
+            Component is out of system, so initialized data should be free here.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.DestroyDependentData">
+            <summary>
+            All dependent data should be free here.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Component.SetState(DCIMAP.GANS.Basic.ComponentState)">
+            <summary>
+            Sets a new state of component. Also invokes assotiated methods
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.Basic.Component.BeforeBindingToTree">
+            <summary>
+            Occurs before this component is added to some tree
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.Basic.Component.BeforeReleaseFromTree">
+            <summary>
+            Occurs before this component is being removed from system
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.Basic.Component.AfterChildAdded">
+            <summary>
+            Occurs after some component is added to this as a child
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.Basic.Component.AfterChildRemoved">
+            <summary>
+            Occurs after this component is being removed from system
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Component.Parent">
+            <summary>
+            Returns parent of this component
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Component.Childs">
+            <summary>
+            Returns an array of childs of this component
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Component.ControlComponent">
+            <summary>
+            Returns the control component of system in which component is places
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Component.State">
+            <summary>
+            Gets a current state of component
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriverComponent.Driver">
+            <summary>
+            Gets a learning driver which component is belong to.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningLog.enableLog">
+            <summary>
+            True if logs are allowed
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningLog.log">
+            <summary>
+            Log's stream
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Creates an instance of LearningLog class
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.WriteSection(DCIMAP.GANS.Basic.LogSection)">
+            <summary>
+            Writes an entire section in log
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.AddEvent(DCIMAP.GANS.Basic.LogMarker)">
+            <summary>
+            Adds an information about event
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.WriteHeader(DCIMAP.GANS.Basic.LogMarker,System.Int32)">
+            <summary>
+            Writes a header of log message
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.CountLines(System.String)">
+            <summary>
+            Counts linebreaks in given string
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningLog.dataSection">
+            <summary>
+            List of lines of learning
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.AddDataLine(System.String)">
+            <summary>
+            Adds a line of learning into collection
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.FlushData">
+            <summary>
+            Flushes data
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.Save">
+            <summary>
+            Saves system (saves system and flush data)
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLog.CloseLog">
+            <summary>
+            Stops ligging
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningLog.EnableLog">
+            <summary>
+            True if logs are allowed
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ImageTransform">
+            <summary>
+            Class for processing FastBitmap
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ImageTransform.Rotate90(DCIMAP.GANS.Basic.FastBitmap)">
+            <summary>
+            Rotates FastBitmap 90 degree clockwise
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ImageTransform.MirrorX(DCIMAP.GANS.Basic.FastBitmap)">
+            <summary>
+            Mirrors FastBitmap over X axis
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ImageTransform.MirrorY(DCIMAP.GANS.Basic.FastBitmap)">
+            <summary>
+            Mirrors FastBitmap over Y axis
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ImageTransform.Crop(DCIMAP.GANS.Basic.FastBitmap,System.Drawing.Rectangle)">
+            <summary>
+            Crops rectangular subimage from image
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ImageTransform.ColorFromHSB(System.Double,System.Double,System.Double)">
+            <summary>
+            Converts HSB to Color
+            </summary>
+            <param name="h">Hue from 0 to 360</param>
+            <param name="s">Saturation from 0 tо 1</param>
+            <param name="l">Brightness from 0 tо 1</param>
+            <returns></returns>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ImageTransform.CreateColors(System.Int32,System.Double,System.Double)">
+            <summary>
+            Gets some count of colors from color ring (with given saturation and brightness)
+            </summary>
+            <param name="count"></param>
+            <param name="saturation"></param>
+            <param name="brightness"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.SystemStartInfo">
+            <summary>
+             A StartUp for one learning system.
+             You may specify:
+             1) Only system for learning. In this case, files will be created automatically, if logs are enabled
+             2) Only name of system. Neural system will be loaded from specified file.
+             3) Both system and name. It is just a way to specify exactly, where system and log will be stored
+             If autosaving is disabled, system will not be saved during learning.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.SystemStartInfoBase">
+            <summary>
+            A base class for SystemStartUp
+            Generated by THORNADO
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemStartInfoBase._enableautosaving">
+            <summary>
+            Should autosaving be enabled
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemStartInfoBase._system">
+            <summary>
+            A system to learn
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemStartInfoBase._systemfilename">
+            <summary>
+            A filename of system
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoBase.#ctor">
+            <summary>
+            Creates an instance of SystemStartInfoBase class
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoBase.SystemFileName">
+            <summary>
+            A filename of system
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoBase.System">
+            <summary>
+            A system to learn
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoBase.EnableAutosaving">
+            <summary>
+            Should autosaving be enabled
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ComponentTraversal">
+            <summary>
+            An enumerator to return all the components in subtree
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentTraversal.innerList">
+            <summary>
+            A structure where components are stored
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentTraversal.index">
+            <summary>
+            Current index
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentTraversal.#ctor(DCIMAP.GANS.Basic.Component)">
+            <summary>
+            Creates an instance of ComponentTravesal class
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentTraversal.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentTraversal.MoveNext">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentTraversal.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentTraversal.OpenComponent(DCIMAP.GANS.Basic.Component)">
+            <summary>
+            Recursive method which adds to innerList all childs and then its parent
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentTraversal.System#Collections#IEnumerator#Current">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentTraversal.Current">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.QueueAverager">
+            <summary>
+            Queue for real numbers. It keeps its length less than maxCount number. It allows to get an average value over queue.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.QueueAverager.maxCount">
+            <summary>
+            Maximum length of queue
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.QueueAverager.queue">
+            <summary>
+            Queue
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.QueueAverager.sum">
+            <summary>
+            Current sum of numbers in queue
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.QueueAverager.#ctor(System.Int32)">
+            <summary>
+            Craetes an instance of QueueAverager class with specified length
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.QueueAverager.Push(System.Double)">
+            <summary>
+            Pushes a values in queue. 
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.QueueAverager.Clear">
+            <summary>
+            Clears queue
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.QueueAverager.MaxCount">
+            <summary>
+            Gets a maximum count of elements in quue
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.QueueAverager.Count">
+            <summary>
+            Gets a current count of elements in queue
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.QueueAverager.Average">
+            <summary>
+            Gets an average value over queue
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.QueueAverager.IsFilled">
+            <summary>
+            True if queue is filled
+            </summary>
+        </member>
+        <member name="T:System.NestedEnumerator`2">
+            <summary>
+            Class realizing <see cref="T:System.Collections.Generic.IEnumerator`1"/> of <typeparamref name="TVal"/>
+            by <see cref="T:System.Collections.Generic.IEnumerator`1"/> of <typeparamref name="TArg"/>
+            which is <see cref="T:System.Collections.Generic.IEnumerator`1"/> of <typeparamref name="TVal"/>
+            </summary>
+            <typeparam name="TArg">Type of elements in the given <see cref="T:System.Collections.Generic.IEnumerator`1"/>.</typeparam>
+            <typeparam name="TVal">Type of the elements in <typeparamref name="TArg"/>.</typeparam>
+        </member>
+        <member name="M:System.NestedEnumerator`2.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.NestedEnumerator`2.MoveNext">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.NestedEnumerator`2.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.NestedEnumerator`2.#ctor(System.Collections.Generic.IEnumerator{`0})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:System.NestedEnumerator`2.Current">
+            <inheritdoc/>
+        </member>
+        <member name="P:System.NestedEnumerator`2.System#Collections#IEnumerator#Current">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.RealVector">
+            <summary>
+            A class of simple real vector. Its components have a double values.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.Vector">
+            <summary>
+            A class for a read/write vector. 
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ReadOnlyVector">
+            <summary>
+            Abstract class for a read-only vector. This vector's components cannot be assign.
+            Provides a functionality, which is possible without assigning parameter's components, such as basic arithmetical and comparison operation. All operations are implemented as static methods. In addition, some operators are overriden to provide a usable form to access these methods, if language's compiler allows so.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.CheckLengths(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Checks if vector's lengths are equal. Throws exception if not.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.AsRealVector">
+            <summary>
+            Creates a real vector, which's components are equal to components of this vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.ToString">
+            <summary>
+            Returns a string representation of vector in format:
+            (val1; val2;...)
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Add(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a new vector which is a sum of vector and argument
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_Addition(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a new vector which is a sum of vector and argument
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Subtract(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a new vector which is a difference of vector and argument
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_Subtraction(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a new vector which is a difference of vector and argument
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.MultiplyComponentwise(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a new vector which is a result of componentwise multiplication of vector and argument
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.DivideComponentwise(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a new vectorwhich is a result of componentwise division of vector and argument
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+             <exception cref="T:System.Exception">Throws exception if divisor is zero</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Multiply(System.Double)">
+            <summary>
+            Returns a new vector which is a result of multiplication of vector to scalar argument
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_Multiply(DCIMAP.GANS.Basic.ReadOnlyVector,System.Double)">
+            <summary>
+            Returns a new vector which is a result of multiplication of vector to scalar argument
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Divide(System.Double)">
+            <summary>
+            Returns a new vector which is a result of division of vector to scalar argument
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_Division(DCIMAP.GANS.Basic.ReadOnlyVector,System.Double)">
+            <summary>
+            Returns a new vector which is a result of division of vector to scalar argument
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.MultiplyScalar(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a result of scalar multiplication of vector and argument
+            </summary>
+            <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_Multiply(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a result of scalar multiplication of vector and argument
+            </summary>
+            <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Inverse">
+            <summary>
+            Returns a vector, opposite to given
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_UnaryNegation(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns a vector, opposite to given
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.CompareTo(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Compare this vector to another one
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Equals(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vectors are equal. 
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Equals(System.Object)">
+            <summary>
+            Overriden. See Object.Equals
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.GetHashCode">
+            <summary>
+            Gets a hash code
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_Equality(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vectors are equal. 
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.NotEqual(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vectors are not equal. 
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_Inequality(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vectors are not equal. 
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Less(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise strictly less that b. 
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_LessThan(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise strictly less that b. 
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.LessOrEqualStrict(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise less or equal to b, but a is not equal to b.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.LessOrEqual(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise less or equal to b.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_LessThanOrEqual(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise less or equal to b.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Greater(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vectora is componentwise greter than vector b
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_GreaterThan(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vectora is componentwise greter than vector b
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.GreaterOrEqualStrict(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise greater or equal to b, but a is not equal to b.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.GreaterOrEqual(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise greater or equal to b.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.op_GreaterThanOrEqual(DCIMAP.GANS.Basic.ReadOnlyVector,DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Returns true, if vector a is componentwise greater or equal to b.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException">Throws exception, if vector's lengthes are not equal</exception>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ReadOnlyVector.Elem">
+            <summary>
+            Called instead of get Item
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ReadOnlyVector.SetElem">
+            <summary>
+            Called instead of set Item
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Clear">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.Lock">
+            <summary>
+            Creates a locked wrap of vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.GetMaxIndex">
+            <summary>
+            Gets an index of vector, which contains a maximum element
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ReadOnlyVector.GetMinIndex">
+            <summary>
+            Gets an index of vector, which contains a minimum element
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ReadOnlyVector.Count">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ReadOnlyVector.Item(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ReadOnlyVector.IsReadOnly">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.InverseSelf">
+            <summary>
+            Inverse vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.CopyFrom(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Copies a components from given vector to this
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.SetConstant(System.Double)">
+            <summary>
+            Sets all vectors components equal to given constant
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.Clear">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.AddTo(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Adds an argument to vector
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.SubtractTo(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Subtract an argument from vector
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.MultiplyComponentwiseTo(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Multiply vector to argument componentwise
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.DivideComponentwiseTo(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Divide vector to argument componentwise
+            </summary>
+             <exception cref="T:System.Exception">Throw exception if vector's lengthes are not equal</exception>
+             <exception cref="T:System.Exception">Throws exception if divisor is zero</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.MultiplyTo(System.Double)">
+            <summary>
+            Multiplies vector to scalar argument
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Vector.DivideTo(System.Double)">
+            <summary>
+            Divides vector to scalar argument
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Vector.IsReadOnly">
+            <inheritdoc/>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.RealVector.vector">
+            <summary>
+            internal array of real numbers
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.RealVector.#ctor(System.Int32)">
+            <summary>
+            Creates an array of real numbers with specified length
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.RealVector.elem(System.Int32)">
+            <summary>
+            Local realisation of Elem delegate
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.RealVector.setElem(System.Int32,System.Double)">
+            <summary>
+            Local realisation of SetElem delegate
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.RealVector.FromValues(System.Double[])">
+            <summary>
+            Creates a real vector from values.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.RealVector.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.RealVector.Count">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ISupervisorPanel">
+            <summary>
+            Panel, which allows to display results of supervisor work
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ISupervisorPanel.Draw(System.Object)">
+            <summary>
+            Draws a supervisor info
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.Linearizer">
+            <summary>
+            This class is used to concatenate vectors, and then indexing this concatenation as a signle vector
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Linearizer.indexes">
+            <summary>
+            By index in concatenated vector, gives an index of vector in set
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Linearizer.offsets">
+            <summary>
+            By index in concatenated vector, gives an index of component in original vector
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Linearizer.vectors">
+            <summary>
+            Set of vectors
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Linearizer.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Linearizer.PutIntoCollection(DCIMAP.GANS.Basic.Vector)">
+            <summary>
+            Adds a vector to set
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Linearizer.PutLinearizerIntoCollection(DCIMAP.GANS.Basic.Vector)">
+            <summary>
+            Adds a linearizer vector into set.
+            If vector is not linearizer, it will be added as in <see cref="M:DCIMAP.GANS.Basic.Linearizer.PutIntoCollection(DCIMAP.GANS.Basic.Vector)"/>
+            If argument V is linearizer, all vectors from it will be added. It increases performance, because all actions will be done directly, without using V.
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Linearizer.ClearCollection">
+            <summary>
+            Clears all vectors from Linearizeer
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Linearizer.elem(System.Int32)">
+            <summary>
+            Local realisation of Elem delegate
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Linearizer.setElem(System.Int32,System.Double)">
+            <summary>
+            Local realisation of SetElem delegate
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Linearizer.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Linearizer.Count">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.Metric">
+            <summary>
+            Class of metric, i.e. distance between output vector and input vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Metric.Module(DCIMAP.GANS.Basic.Vector)">
+            <summary>
+            Returns a module of vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Metric.ModuleGrad(DCIMAP.GANS.Basic.Vector)">
+            <summary>
+            Returns a gradient of module of vector over vector's components
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Metric.Distance(DCIMAP.GANS.Basic.LockedVector,DCIMAP.GANS.Basic.LockedVector)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Metric.DistanceGrad(DCIMAP.GANS.Basic.LockedVector,DCIMAP.GANS.Basic.LockedVector)">
+            <inheritdoc/>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Metric.SemiEuklid">
+            <summary>
+            A metric, distance in which is a sum of coordinates squares, without root
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Metric.Euklid">
+            <summary>
+            Standart euklidean metric.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningUI">
+            <summary>
+            This class provides an interaction between user and learning process.
+            It can return a command to learning driver, obtain a current state of driver. In addition, when learning iterations ends, method Update is called, so LearningUI may display details about passed iteration
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningUI.ShowIterationInfo(DCIMAP.GANS.Basic.LearningIterationInfo)">
+            <summary>
+            Updates a UI after a learning iteration is done. 
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningUI.ShowSupervisorInfo(System.Object)">
+            <summary>
+            Updates a UI when new supervisor info is obtained
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningUI.Start">
+            <summary>
+            Start interface
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningUI.Stop">
+            <summary>
+            Stops interface
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningUI.GetCommand">
+            <summary>
+            Gets a command, which should be passed to driver
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningUI.SetState(DCIMAP.GANS.Basic.DriverState)">
+            <summary>
+            Represent a given state of a driver
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningUI.InputParameters">
+            <summary>
+            Inputs parameters. Returns true, if parameters were chenged
+            </summary>
+        </member>
+        <member name="T:System.Pair`2">
+            <summary>
+            Standart struct that encapsulates values of 2 types
+            </summary>
+        </member>
+        <member name="F:System.Pair`2.First">
+            <summary>
+            First element. It's type is <typeparamref name="T1"/>.
+            </summary>
+        </member>
+        <member name="F:System.Pair`2.Second">
+            <summary>
+            Second element. It's type is <typeparamref name="T2"/>.
+            </summary>
+        </member>
+        <member name="M:System.Pair`2.#ctor(`0,`1)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningIterationInfo">
+            <summary>
+            Base class for learning iteration info
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningIterationInfo.iterationNumber">
+            <summary>
+            Number of iteration
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningIterationInfo.totalTime">
+            <summary>
+            Total time of learning (in hours)
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningIterationInfo.IterationNumber">
+            <summary>
+            Number of iteration
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningIterationInfo.TotalTime">
+            <summary>
+            Total time of learning (in hours)
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningSupervisorInfo">
+            <summary>
+            Information, which supervisor gives to driver
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningSupervisorInfo.info">
+            <summary>
+            Information about learning process (summary over iterations)
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningSupervisorInfo.stopLearning">
+            <summary>
+            Should system stop learning
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningSupervisorInfo.#ctor(System.Boolean,System.Object)">
+            <summary>
+            Creates learning supervisor info 
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningSupervisorInfo.StopLearning">
+            <summary>
+            Should system stop learning
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningSupervisorInfo.Info">
+            <summary>
+            Information about learning process (summary over iterations)
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.SemiEuklidMetric">
+            <summary>
+            A "semiEuklid" metric class (d=sum(ai-bi)^2)
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SemiEuklidMetric.Module(DCIMAP.GANS.Basic.Vector)">
+            <summary>
+            Returns sum(vi)^2
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SemiEuklidMetric.ModuleGrad(DCIMAP.GANS.Basic.Vector)">
+            <summary>
+            Returns a 2*sum(vi)
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.StartInfo">
+            <summary>
+            A class, which contains information of startup.
+            It contains an array of systems, which will be learned. Most often, only one system is required, therefore, by default Systems array contains one element.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.StartInfoBase">
+            <summary>
+            Base class for StartInfo
+            Generated by THORNADO
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.StartInfoBase._enablelog">
+            <summary>
+            Should learning be logged
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.StartInfoBase._inputparameters">
+            <summary>
+            Input driver parameters on startup
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.StartInfoBase._logfilename">
+            <summary>
+            Filename of log
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.StartInfoBase._readlog">
+            <summary>
+            Should neural system read log before learning (i.e. is it a continue of learning)
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.StartInfoBase._systemsinfo">
+            <summary>
+            Startup information of systems
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.StartInfoBase.#ctor">
+            <summary>
+            Creates an instance of StartInfoBase class
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.StartInfoBase.EnableLog">
+            <summary>
+            Should learning be logged
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.StartInfoBase.InputParameters">
+            <summary>
+            Input driver parameters on startup
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.StartInfoBase.LogFileName">
+            <summary>
+            Filename of log
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.StartInfoBase.ReadLog">
+            <summary>
+            Should neural system read log before learning (i.e. is it a continue of learning)
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.StartInfoBase.SystemsInfo">
+            <summary>
+            Startup information of systems
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.StartInfo.#ctor">
+            <summary>
+            Creates a startup info
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.StartInfo.SetSystemsCount(System.Int32)">
+            <summary>
+            Sets a count of systems in startup
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.StartInfo.Initialize">
+            <summary>
+            Initialiizes startup
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.StartInfo.SystemInfo">
+            <summary>
+            System (0-th system in Systems array)
+            </summary>
+        </member>
+        <member name="T:System.ArrayEnumerator`1">
+            <summary>
+            Class realizing <see cref="T:System.Collections.Generic.IEnumerator`1"/> for <see cref="T:System.Array"/> of <typeparamref name="T"/>.
+            </summary>
+        </member>
+        <member name="M:System.ArrayEnumerator`1.#ctor(`0[])">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:System.ArrayEnumerator`1.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.ArrayEnumerator`1.MoveNext">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.ArrayEnumerator`1.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="P:System.ArrayEnumerator`1.Current">
+            <inheritdoc/>
+        </member>
+        <member name="P:System.ArrayEnumerator`1.System#Collections#IEnumerator#Current">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ContinousDistribution">
+            <summary>
+            A distribution of continous random value
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ContinousDistribution.max">
+            <summary>
+            A supremum of distribution, i.e. maximal value which can be given. If value is not distributed on interval, this field must be equal to NAN. +Infty value is also possible.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ContinousDistribution.min">
+            <summary>
+            An infinum of distribution, i.e. minimal value which can be given. If value is not distributed on interval, this field must be equal to NAN. -Infty value is also possible.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ContinousDistribution.#ctor(System.Double,System.Double)">
+            <summary>
+            Creates a continous distribution
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ContinousDistribution.Distribute(System.Random)">
+            <summary>
+            Returns  distributed values
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ContinousDistribution.Min">
+            <summary>
+            An infinum of distribution, i.e. minimal value which can be given. If value is not distributed on interval, this field must be equal to NAN. -Infty value is also possible.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ContinousDistribution.Max">
+            <summary>
+            A supremum of distribution, i.e. maximal value which can be given. If value is not distributed on interval, this field must be equal to NAN. +Infty value is also possible.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.DriverParam">
+            <summary>
+            A paramaters of driver
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.DriverParamBase">
+            <summary>
+            Parameters of learning driver
+            Generated by THORNADO
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._autosaverate">
+            <summary>
+            Rate of system autosaving
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._iterationscount">
+            <summary>
+            Count of iterations before process stops
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._iterationshowrate">
+            <summary>
+            Rate of iteration's showing
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._stopbyiterationscount">
+            <summary>
+            True, if learning is limited by iterations count
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._stopbysupervisor">
+            <summary>
+            True, if supervisor can decide to stop learning
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._stopbytimelimit">
+            <summary>
+            True, if learning if limited by time
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._supervisorrate">
+            <summary>
+            Rate of work with supervisor's , i.e. showing its output and checking whether system should stop
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamBase._timelimit">
+            <summary>
+            Time limit (in hours) of learning
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamBase.#ctor">
+            <summary>
+            Creates an instance of DriverParam class
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.IterationShowRate">
+            <summary>
+            Rate of iteration's showing
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.SupervisorRate">
+            <summary>
+            Rate of work with supervisor's , i.e. showing its output and checking whether system should stop
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.AutosaveRate">
+            <summary>
+            Rate of system autosaving
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.StopBySupervisor">
+            <summary>
+            True, if supervisor can decide to stop learning
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.StopByIterationsCount">
+            <summary>
+            True, if learning is limited by iterations count
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.StopByTimeLimit">
+            <summary>
+            True, if learning if limited by time
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.IterationsCount">
+            <summary>
+            Count of iterations before process stops
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamBase.TimeLimit">
+            <summary>
+            Time limit (in hours) of learning
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParam.Clone">
+            <summary>
+            Creates a copy of DriverParam class
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ComponentState">
+            <summary>
+            An enumeration of component's states
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentState.Outside">
+            <summary>
+            State when component is outside of system
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentState.Inside">
+            <summary>
+            State, when component has been added into system, but compatibility checking was not performed
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentState.Initialized">
+            <summary>
+            State when compatibility checking has been completed, but temporary data has not been created yet
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentState.Ready">
+            <summary>
+            State when component is ready to work
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentState.ReadyToSave">
+            <summary>
+            State when component is ready to save, so all temporary data has been applied
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentState.Altering">
+            <summary>
+            State when system of component has been driven into altering state
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.SystemState">
+            <summary>
+            Possible states of system
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemState.Altering">
+            <summary>
+            System is being altered
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemState.Initialized">
+            <summary>
+            System is initialized
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemState.Ready">
+            <summary>
+            System is ready to work
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemState.ReadyToSave">
+            <summary>
+            System is ready to save
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.GraphDrawer">
+            <summary>
+            A small control which drawes graph. It arranges vertices at circles and allows different clors for vertices and edges
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.GraphDrawer.#ctor">
+            <summary>
+            Creates GraphDrawer
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.GraphDrawer.Clear">
+            <summary>
+            Clears all vertices and edges in graph
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.GraphDrawer.SetSize(System.Int32)">
+            <summary>
+            Sets a count of vertices
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.GraphDrawer.AddVertice(System.Int32,System.Drawing.Brush)">
+            <summary>
+            Adds a vertices into collection (and specifies which <see cref="T:System.Drawing.Brush"/> to use for painting)
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.GraphDrawer.AddEdge(System.Int32,System.Int32,System.Drawing.Pen)">
+            <summary>
+            Adds an edge into graph (and specifies which <see cref="T:System.Drawing.Pen"/> to use for painting)
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.GraphDrawer.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>
+            Paints graph
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.SystemStartInfoArray">
+            <summary>
+            An array of elements SystemStartInfo
+            Generated by THORNADO
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemStartInfoArray.InnerList">
+            <summary>Internal storage</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.#ctor">
+            <summary>Creates SystemStartInfoArray</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.Add(DCIMAP.GANS.Basic.SystemStartInfo)">
+            <summary>Adds an element to array</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.Remove(DCIMAP.GANS.Basic.SystemStartInfo)">
+            <summary>Removees an element from array</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.Clear">
+            <summary>Clears array</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.RemoveAt(System.Int32)">
+            <summary>Removes an element at specified index</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.Insert(System.Int32,DCIMAP.GANS.Basic.SystemStartInfo)">
+            <summary>Inserts an element at specified position</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.IndexOf(DCIMAP.GANS.Basic.SystemStartInfo)">
+            <summary>Gets an elements index</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.RemoveRange(System.Int32,System.Int32)">
+            <summary>Removes a range from array</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.Sort">
+            <summary>Sorts array</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+            <summary>ICollection.CopyTo</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.CopyTo(DCIMAP.GANS.Basic.SystemStartInfo[],System.Int32)">
+            <summary>ICollection{SystemStartInfo}.CopyTo</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.Contains(DCIMAP.GANS.Basic.SystemStartInfo)">
+            <summary>ICollection{SystemStartInfo}.Contains</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.System#Collections#IEnumerable#GetEnumerator">
+            <summary>ICollection.GetEnumerator</summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoArray.GetEnumerator">
+            <summary>ICollection{SystemStartInfo}.GetEnumerator</summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoArray.Item(System.Int32)">
+            <summary>
+            Gets or sets elements of array
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoArray.Count">
+            <summary>Count of elements</summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoArray.System#Collections#ICollection#IsSynchronized">
+            <summary>
+            ICollection.IsSynchronized
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoArray.System#Collections#ICollection#SyncRoot">
+            <summary>
+            ICollection.SyncRoot
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoArray.IsReadOnly">
+            <summary>
+            ICollection.IsReadOnly
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.SystemStartInfoTextIO">
+            <summary>
+            This class writes and read SystemStartInfo object to streams.
+            Generated by THORNADO
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.SystemStartInfoTextIO.io">
+            <summary>
+            Static object for text IO
+            </summary>	 
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoTextIO.ReadValue(System.String,System.String,System.Object)">
+            <summary>
+            Writes object into stream
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoTextIO.WriteValues(System.IO.StreamWriter,System.Object)">
+            <summary>
+            Writes object in specified stream
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoTextIO.CreateObject">
+            <summary>
+            Creates an object
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoTextIO.Add(System.Collections.ICollection,System.Object)">
+            <summary>
+            Adds an element to array
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.SystemStartInfoTextIO.Clear(System.Collections.ICollection)">
+            <summary>
+            Clears collection
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.SystemStartInfoTextIO.IO">
+            <summary>
+            Static object for text IO
+            </summary>	 
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.StartInfoTextIO">
+            <summary>
+            This class writes and read StartInfo object to streams.
+            Generated by THORNADO
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.StartInfoTextIO.io">
+            <summary>
+            Static object for text IO
+            </summary>	 
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.StartInfoTextIO.ReadValue(System.String,System.String,System.Object)">
+            <summary>
+            Writes object into stream
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.StartInfoTextIO.WriteValues(System.IO.StreamWriter,System.Object)">
+            <summary>
+            Writes object in specified stream
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.StartInfoTextIO.CreateObject">
+            <summary>
+            Creates an object
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.StartInfoTextIO.IO">
+            <summary>
+            Static object for text IO
+            </summary>	 
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningLogReader">
+            <summary>
+            Reader of logs
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningLogReader.rd">
+            <summary>
+            Stream of log
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLogReader.#ctor(System.String)">
+            <summary>
+            Creates a LearningLogReader over specified file
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLogReader.Read">
+            <summary>
+            Reads log
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLogReader.Trunk(System.String@)">
+            <summary>
+            Trunkates a sentence from log header
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLogReader.ReadSection">
+            <summary>
+            Reads one section of log
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLogReader.Close">
+            <summary>
+            Closes log
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningLogReader.ReadSectionEvent">
+            <summary>
+            Reads one log section and generates an event
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.Basic.LearningLogReader.Readed">
+            <summary>
+            Occurs when new section is readed
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ComponentAdopter">
+            <summary>
+            An adopter which allows to 
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ControlComponentBase">
+            <summary>
+            A base class for ControlComponent and ControlAdapter class. It contains four states (Altering, Initialized, Ready and ReadyToSave) and transitions between them.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ControlComponentBase.state">
+            <summary>
+            A current state of system
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponentBase.#ctor">
+            <summary>
+            Creates a ControlComponentBase class
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponentBase.SetupState(DCIMAP.GANS.Basic.SystemState,System.Boolean)">
+            <summary>
+            Change the state and invokes OnSystemStateChanged method
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponentBase.OnSystemStateChanged(DCIMAP.GANS.Basic.SystemState,DCIMAP.GANS.Basic.SystemState,System.Boolean)">
+            <summary>
+            Occurs when system state is chandeg
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponentBase.SetChilds(DCIMAP.GANS.Basic.ComponentState,DCIMAP.GANS.Basic.SystemState,System.Boolean)">
+            <summary>
+            Sets states to childs
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponentBase.SetSystemState(DCIMAP.GANS.Basic.SystemState)">
+            <summary>
+            Sets new system state
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponentBase.SetSystemState(DCIMAP.GANS.Basic.SystemState,System.Boolean)">
+            <summary>
+            Sets new system state
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ControlComponentBase.SystemState">
+            <summary>
+            A current state of system
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentAdopter.control">
+            <summary>
+            A control which is adopted by component
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentAdopter.Control">
+            <summary>
+            A control which is adopted by component
+            </summary>
+        </member>
+        <member name="T:System.Func`1">
+            <summary>
+            Delegate for method with no arguments and return type <typeparamref name="TVal"/>.
+            </summary>
+        </member>
+        <member name="T:System.Func`2">
+            <summary>
+            Delegate for method with one <typeparamref name="TArg"/> arguments
+            and return type <typeparamref name="TVal"/>.
+            </summary>
+        </member>
+        <member name="T:System.Func`3">
+            <summary>
+            Delegate for method with <typeparamref name="TArg1"/> and <typeparamref name="TArg2"/> arguments
+            and return type <typeparamref name="TVal"/>.
+            </summary>
+        </member>
+        <member name="T:System.Func`4">
+            <summary>
+            Delegate for method with <typeparamref name="TArg1"/> and <typeparamref name="TArg3"/>
+            and <typeparamref name="TArg2"/> arguments and return type <typeparamref name="TVal"/>.
+            </summary>
+        </member>
+        <member name="T:System.Action">
+            <summary>
+            Delegate for method with no arguments and without return value.
+            </summary>
+        </member>
+        <member name="T:System.Action`2">
+            <summary>
+            Delegate for method with <typeparamref name="TArg1"/> and <typeparamref name="TArg2"/> arguments
+            and without return value.
+            </summary>
+        </member>
+        <member name="T:System.Action`3">
+            <summary>
+            Delegate for method with <typeparamref name="TArg1"/> and <typeparamref name="TArg2"/>
+            and <typeparamref name="TArg3"/> arguments and without return value.
+            </summary>
+        </member>
+        <member name="T:System.Action`4">
+            <summary>
+            Delegate for method with <typeparamref name="TArg1"/> and <typeparamref name="TArg2"/>
+            and <typeparamref name="TArg3"/> and <typeparamref name="TArg4"/> arguments and without return value..
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.UnlockedVector">
+            <summary>
+            A class of pseudo-unlocked vector. It allows to see to a LockedVector as to Vector, but setter always throws exception
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UnlockedVector.locked">
+            <summary>
+            Underlying locked vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.UnlockedVector.#ctor(DCIMAP.GANS.Basic.LockedVector)">
+            <summary>
+            Creates unlocked vector around given locked vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.UnlockedVector.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.UnlockedVector.Count">
+            <summary>
+            Returns a length of vector
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.EuklidMetric">
+            <summary>
+            Standart euklidean metric
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.EuklidMetric.Module(DCIMAP.GANS.Basic.Vector)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.EuklidMetric.ModuleGrad(DCIMAP.GANS.Basic.Vector)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LogSection">
+            <summary>
+            A section of log
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogSection.lines">
+            <summary>
+            Lines
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogSection.marker">
+            <summary>
+            Type of section
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogSection.stamp">
+            <summary>
+            Timestamp
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogSection.#ctor(DCIMAP.GANS.Basic.LogMarker,System.DateTime)">
+            <summary>
+            Creates a log section
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogSection.Add(System.String)">
+            <summary>
+            Adds a line into collection
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LogSection.Stamp">
+            <summary>
+            Stamp pf time and data
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LogSection.LineCount">
+            <summary>
+            Count of lines in section
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LogSection.Marker">
+            <summary>
+            Marker of section
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LogSection.Item(System.Int32)">
+            <summary>
+            Gets a string on index-th from this section
+            </summary>
+        </member>
+        <member name="T:System.Tuple`1">
+            <summary>
+            Standart struct that encapsulates values of 1 type.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`1.V1">
+            <summary>
+            Element 1. It's type is <typeparamref name="T1"/>.
+            </summary>
+        </member>
+        <member name="T:System.Tuple`2">
+            <summary>
+            Standart struct that encapsulates values of 2 type.
+            </summary>
+            <remarks>
+            Similar to <see cref="T:System.Pair`2"/>.
+            </remarks>
+        </member>
+        <member name="F:System.Tuple`2.V1">
+            <summary>
+            Element 1. It's type is <typeparamref name="T1"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`2.V2">
+            <summary>
+            Element 2. It's type is <typeparamref name="T2"/>.
+            </summary>
+        </member>
+        <member name="T:System.Tuple`3">
+            <summary>
+            Standart struct that encapsulates values of 3 type.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`3.V1">
+            <summary>
+            Element 1. It's type is <typeparamref name="T1"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`3.V2">
+            <summary>
+            Element 2. It's type is <typeparamref name="T2"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`3.V3">
+            <summary>
+            Element 3. It's type is <typeparamref name="T3"/>.
+            </summary>
+        </member>
+        <member name="T:System.Tuple`4">
+            <summary>
+            Standart struct that encapsulates values of 4 type.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`4.V1">
+            <summary>
+            Element 1. It's type is <typeparamref name="T1"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`4.V2">
+            <summary>
+            Element 2. It's type is <typeparamref name="T2"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`4.V3">
+            <summary>
+            Element 3. It's type is <typeparamref name="T3"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`4.V4">
+            <summary>
+            Element 4. It's type is <typeparamref name="T4"/>.
+            </summary>
+        </member>
+        <member name="T:System.Tuple`5">
+            <summary>
+            Standart struct that encapsulates values of 5 type.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`5.V1">
+            <summary>
+            Element 1. It's type is <typeparamref name="T1"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`5.V2">
+            <summary>
+            Element 2. It's type is <typeparamref name="T2"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`5.V3">
+            <summary>
+            Element 3. It's type is <typeparamref name="T3"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`5.V4">
+            <summary>
+            Element 4. It's type is <typeparamref name="T4"/>.
+            </summary>
+        </member>
+        <member name="F:System.Tuple`5.V5">
+            <summary>
+            Element 5. It's type is <typeparamref name="T5"/>.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningDriver">
+            <summary>
+            Driver of learning process.
+            This class handles all learning processes. It runs iterations of LearningHandler class, gives state to LearningUI and receives commands from it.
+            Learning process always starts in separated thread.  
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ControlComponent">
+            <summary>
+            A class which represents a managing component in system
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ControlComponent.description">
+            <summary>
+            User's description of this control component
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponent.#ctor">
+            <summary>
+            Creates an instance of SystemManager class
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponent.Load(System.IO.Stream,System.Runtime.Serialization.IFormatter)">
+            <summary>
+            Load component from specified stream with formatter
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponent.Save(System.IO.Stream,System.Runtime.Serialization.IFormatter)">
+            <summary>
+            Saves system with specified stream and formatter
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponent.EnterAlteringMode">
+            <summary>
+            Drives system in altering mode
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponent.EnterWorkMode">
+            <summary>
+            Drives system intowork mode
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponent.Load(System.String)">
+            <summary>
+            Load component from specified path (uses BinaryFormatter as default)
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ControlComponent.Save(System.String)">
+            <summary>
+            Saves component to specified path (uses BinarFormatter as default)
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ControlComponent.InWorkMode">
+            <summary>
+            Returns true ifsystem is in work mode
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ControlComponent.InAlteringMode">
+            <summary>
+            Returns true if system is in altering mode
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ControlComponent.Description">
+            <summary>
+            Gets description of this control component
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningDriver.state">
+            <summary>
+            Current state of driver.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.SetState(DCIMAP.GANS.Basic.DriverState)">
+            <summary>
+            Sets current state and represent it in UI and corrects logs
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.MakeLearningIteration">
+            <summary>
+            Makes one, compete learning iteration
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.ProcessTransition(DCIMAP.GANS.Basic.UICommand)">
+            <summary>
+            Processes one transition of driver's automata. Returns false, if no more transition are required
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.ProcessIteration">
+            <summary>
+            An iteration of learning process, including UI interaction
+            </summary>
+            <returns>True if learning should be stopped</returns>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.Process">
+            <summary>
+            A learning process method. This method is to be run in separated thread.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.Run">
+            <summary>
+            Runs a learning process.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.RunAsApplication">
+            <summary>
+            Runs a learning process as windows application, with learning form as a main form
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.Initialize">
+            <summary>
+            Initializes startup informations
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.ReadLog">
+            <summary>
+            Reads log and parses parameters from it
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningDriver.startInfo">
+            <summary>
+            Information about starting driver
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningDriver.currentParam">
+            <summary>
+            Internal param
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningDriver.iterationNumber">
+            <summary>
+            Counter of iterations
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningDriver.param">
+            <summary>
+            Parameters of driver
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningDriver.#ctor">
+            <summary>
+            Creates learning driver
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriver.Handler">
+            <summary>
+            LearningHandler provides a computational part of learning.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriver.UI">
+            <summary>
+            LearningUI provides a interaction with user, giving commands to driver and representing its state. 
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriver.Supervisor">
+            <summary>
+            Supervisor of learning process
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriver.Log">
+            <summary>
+            Learning log
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriver.State">
+            <summary>
+            Current state of driver.
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.Basic.LearningDriver.Stopped">
+            <summary>
+            Occurs when learning driver has stopped its work
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriver.StartInfo">
+            <summary>
+            Information about driver. 
+            Before learning starts, you may use this property to determine a behavior of the driver.
+            After learning starts, you MUST NOT change anything. Components of driver can read this property for detaits
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningDriver.Param">
+            <summary>
+            Parameters of driver
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.DriverProviderAttribute">
+            <summary>
+            An attribute for driver provider.
+            This attribute must be applied to static public members, which takes no parameters and returns a learning driver. 
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverProviderAttribute.driverName">
+            <summary>
+            Name of driver
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverProviderAttribute.#ctor(System.String)">
+            <summary>
+            Creates DriverProviderAttribute with specified driver name
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverProviderAttribute.DriverName">
+            <summary>
+            Name of driver
+            </summary>
+        </member>
+        <member name="T:System.FilteredEnumerator`1">
+            <summary>
+            <see cref="T:System.Collections.Generic.IEnumerator`1"/> of <typeparamref name="T"/> that filters elements
+            of base <see cref="T:System.Collections.Generic.IEnumerator`1"/> by given condition.
+            </summary>
+        </member>
+        <member name="M:System.FilteredEnumerator`1.#ctor(System.Collections.Generic.IEnumerator{`0},System.Func{`0,System.Boolean})">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:System.FilteredEnumerator`1.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.FilteredEnumerator`1.MoveNext">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.FilteredEnumerator`1.Reset">
+            <inheritdoc/>
+        </member>
+        <member name="P:System.FilteredEnumerator`1.Current">
+            <inheritdoc/>
+        </member>
+        <member name="P:System.FilteredEnumerator`1.System#Collections#IEnumerator#Current">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LockedVector">
+            <summary>
+            Represents a class of "Locked" vector. It is a non-abstract class, which wrap some vector and allow only getters to its elements, not setters. Use this class to be sure that components of vector will not be changed.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LockedVector.vector">
+            <summary>
+            Underlying vector's object
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LockedVector.#ctor(DCIMAP.GANS.Basic.ReadOnlyVector)">
+            <summary>
+            Creates an instance of LockedVector over given vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LockedVector.op_Implicit(DCIMAP.GANS.Basic.Vector)~DCIMAP.GANS.Basic.LockedVector">
+            <summary>
+            Implicity conversion vector's object to locked object
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LockedVector.Unlock">
+            <summary>
+            Returns pseudo-unlocked vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LockedVector.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LockedVector.Count">
+            <summary>
+            Returs a vector's length 
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.HashVector">
+            <summary>
+            A vector, which is based on hash. One may set a default value (typically zero), and, if vector's element is equal to it, it is not actually stored.
+            This type of vector is to be used when there is a large zero-places in vectors
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.HashVector.def">
+            <summary>
+            A default value
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.HashVector.vector">
+            <summary>
+            Hash of vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.HashVector.#ctor(System.Double)">
+            <summary>
+            Creates a hash vector with default value def
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.HashVector.#ctor">
+            <summary>
+            Creates a hash vector
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.HashVector.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.HashVector.elem(System.Int32)">
+            <summary>
+            Local realisation of Elem delegate
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.HashVector.setElem(System.Int32,System.Double)">
+            <summary>
+            Local realisation of SetElem delegate
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.HashVector.Count">
+            <inheritdoc/>
+        </member>
+        <member name="T:ControlPanel">
+            <summary>
+            Summary description for ControlPanel.
+            </summary>
+        </member>
+        <member name="M:ControlPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LogMarker">
+            <summary>
+            Markers of log sections.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.OpenedEvent">
+            <summary>
+            Learning session is opened. Section contains no lines.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.ClosedEvent">
+            <summary>
+            Learning session is closed. Section contains no lines.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.StoppedEvent">
+            <summary>
+            Learning was stopped. Section contains no lines.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.StartedEvent">
+            <summary>
+            Learning was started/resumed. Section contains no lines.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.SavedEvent">
+            <summary>
+            System was saved (both system and learning data). Section contains no lines.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.HandlerParam">
+            <summary>
+            Parameters of handler. Section contains lines in format, which is specified by particular handler. One handler may have more that one parameter section, and it should add its own mark to understand them.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.Data">
+            <summary>
+            Section with learning data. It contains lines, and each line corresponds to one learning iteration. Format of lines is determined by handler.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.CoreParam">
+            <summary>
+            Section with parameters of learning driver. Contains lines in specified format. 
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.FinishedEvent">
+            <summary>
+            System was ordered to finish learning
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogMarker.Description">
+            <summary>
+            Description of neural system
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningHandler">
+            <summary>
+            Handler of learning process. 
+            It should have a learning system and passes commands from driver to it. After iteration is done, handler must return to driver an object which describes iteration;
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningHandler.MakeIteration">
+            <summary>
+            Makes one iteration of learning. Returns a result of iteration
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningHandler.GetIterationLine(DCIMAP.GANS.Basic.LearningIterationInfo)">
+            <summary>
+            Summarizes iteration information into text line
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningHandler.GetHandlerInfo">
+            <summary>
+            Gets handler info
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningHandler.LoadParam(DCIMAP.GANS.Basic.LogSection)">
+            <summary>
+            Sets up handler according to section
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningHandler.Prepare">
+            <summary>
+            Prepares handler to work. This method invokes before any learning starts
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningHandler.GetStatistics">
+            <summary>
+            Gets statistics of handler. The type and mean of statistics is determined by handler's implementation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.Indexer">
+            <summary>
+            A class for sorting of index. Static methods of this class allows index sorting.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Indexer.index">
+            <summary>
+            A number of index
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.Indexer.owner">
+            <summary>
+            An object at specified index
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Indexer.#ctor(System.Int32,System.IComparable)">
+            <summary>
+            Creates indexer over some owner
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Indexer.CompareTo(DCIMAP.GANS.Basic.Indexer)">
+            <summary>
+            Compares two Indexers
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Indexer.IndexSort(System.Collections.ICollection,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Sorts indexes of array from 'begin' to 'begin+length'.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.Indexer.IndexSort(System.Collections.ICollection,System.Boolean)">
+            <summary>
+            Sorts indexes of array
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Indexer.Owner">
+            <summary>
+            An object at specified index
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.Indexer.Index">
+            <summary>
+            A number of index
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LogViewerMainframe">
+            <summary>
+            A class of form, which is used to display learning logs. It works in assumption, that each iteratino string is a string of equal number of double, separated by \t.
+            To use it, you should override methods ParseSection (parsing additional information, if neccesarty) and SetupAfterLogReading (setting up lines names).
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.checks">
+            <summary>
+            Panel with checkboxes
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.control">
+            <summary>
+            A panel with commands and statistics
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.graph">
+            <summary>
+            Graph
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.log">
+            <summary>
+            Log file name
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.OnSizeChanged(System.EventArgs)">
+            <summary>
+            Arranges controls
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.averageLength">
+            <summary>
+            Lengt of averaging data
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.iterationNumber">
+            <summary>
+            Count of iterations
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.iterFrom">
+            <summary>
+            Minimal iteration to count
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.iterTo">
+            <summary>
+            Maximum iteration to count
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.lines">
+            <summary>
+            Lines of graphs
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.qs">
+            <summary>
+            Array of queues
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.status">
+            <summary>
+            Status of last log reading
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LogViewerMainframe.timespan">
+            <summary>
+            A time of learning
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.AddStatus(System.String)">
+            <summary>
+            Adds a string to current status
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.ParseTime(DCIMAP.GANS.Basic.LogSection)">
+            <summary>
+            Checks section for time information
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.ParseSection(DCIMAP.GANS.Basic.LogSection)">
+            <summary>
+            A method for descendants, to get information from section
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.FlushQueues">
+            <summary>
+            Clears queus and fills lines
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.ParseData(DCIMAP.GANS.Basic.LogSection)">
+            <summary>
+            Parses data
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.SetupAfterLogReading">
+            <summary>
+            Setup data lines after log reading is complete
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.SetupBasic">
+            <summary>
+            Sets iteration count, timespan etc., to control
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.SetupCheckBoxes">
+            <summary>
+            Setups checkboxes
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.#ctor(System.String)">
+            <summary>
+            Creates 
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.Reload(System.Object,System.EventArgs)">
+            <summary>
+            Reloads log
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LogViewerMainframe.Checked(System.Object,System.EventArgs)">
+            <summary>
+            Shows/hides a data line in graph
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LogViewerMainframe.CheckBoxColumns">
+            <summary>
+            Gets a count of checkboxes columns
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LogViewerMainframe.Lines">
+            <summary>
+            Lines of graphs
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.DriverParamTable">
+            <summary>
+            Таблица для ввода объекта типа DriverParam
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamTable.StopByIterationsCountWrap">
+            <summary>
+            DataWrap for stoping by iteration count.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamTable.StopBySupervisorWrap">
+            <summary>
+            DataWrap for stoping by supervisor command.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamTable.StopByTimeLimitWrap">
+            <summary>
+            DataWrap for stoping by time limit.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.#ctor">
+            <summary>
+            Создает таблицу для ввода объекта типа DriverParam
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamTable.data">
+            <summary>
+            Обрабатываемые данные
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.Setup(System.Object)">
+            <summary>
+            Устанавливает обрабатываемые данные
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.LoadData">
+            <summary>
+            Считывает данные из объекта в таблицу
+            </summary>	
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.SaveData">
+            <summary>
+            Сохраняет данные из таблицы в объект
+            </summary>	
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.CheckData">
+            <summary>
+            Проверяет корректность введенных данных и выводит предупреждающие сообщения
+            </summary>	
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.IsChanged">
+            <summary>
+            true, если данные были изменены
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.FinishInput">
+            <summary>
+            Останавливает ввод в таблицу
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTable.InternalSave(DCIMAP.GANS.Basic.DriverParam)">
+            <summary>
+            Сохраняет данные из таблицы в переданный объект
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamTable.InnerData">
+            <summary>
+            Обрабатываемые данные как DriverParam
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamTable.DataObject">
+            <summary>
+            Обрабатываемые данные как Object
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamTable.Data">
+            <summary>
+            Обрабатываемые данные
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.DriverParamTextIO">
+            <summary>
+            This class writes and read DriverParam object to streams.
+            Generated by THORNADO
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverParamTextIO.io">
+            <summary>
+            Static object for text IO
+            </summary>	 
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTextIO.ReadValue(System.String,System.String,System.Object)">
+            <summary>
+            Writes object into stream
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTextIO.WriteValues(System.IO.StreamWriter,System.Object)">
+            <summary>
+            Writes object in specified stream
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.DriverParamTextIO.CreateObject">
+            <summary>
+            Creates an object
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.DriverParamTextIO.IO">
+            <summary>
+            Static object for text IO
+            </summary>	 
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ComponentEventArgs">
+            <summary>
+            EventArgs structure. Contains information of component, which is a cause of raised event
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.ComponentEventArgs.component">
+            <summary>
+            Stored component
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentEventArgs.#ctor(DCIMAP.GANS.Basic.Component)">
+            <summary>
+            Creates an instance of ComponentEventArgs class
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentEventArgs.Component">
+            <summary>
+            Gets the stored component
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningSupervisor">
+            <summary>
+            This class is monitoring learning. It generates some statistics for particular task. In addition, this class may decide to stop learning, if its results are good well enough
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningSupervisor.MonitorIteration(DCIMAP.GANS.Basic.LearningIterationInfo)">
+            <summary>
+            Monitores result of one iteration
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningSupervisor.GetSupervisorInfo">
+            <summary>
+            Returns a result of supervising
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.ComponentArrayProjection`1">
+            <summary>
+            This projector is used to create a external array interface for 'Childs' field, and enforce all children to be <typeparamref name="T"/> type.
+            For example, if every layer in network is Child, I want to create Layers field, which indexing would allow to set and get childs from Childs array. 
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.ComponentArrayProjection`1.#ctor(DCIMAP.GANS.Basic.ComponentArray)">
+            <summary>
+            Creates a ComponentArrayProjection object;
+            </summary>
+            <param name="array"></param>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentArrayProjection`1.Item(System.Int32)">
+            <summary>
+            Gets or sets elements in array. 
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.ComponentArrayProjection`1.Count">
+            <summary>
+            Count of elements in array
+            </summary>
+        </member>
+        <member name="T:System.SimpleEnumerable`1">
+            <summary>
+            Primitive <see cref="T:System.Collections.Generic.IEnumerable`1"/> providing access to predefinde <see cref="T:System.Collections.Generic.IEnumerator`1"/>.
+            </summary>
+        </member>
+        <member name="M:System.SimpleEnumerable`1.#ctor(System.Collections.Generic.IEnumerator{`0})">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:System.SimpleEnumerable`1.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:System.SimpleEnumerable`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.NormalDistribution">
+            <summary>
+            A class for normal distribution. Uses Box-Muller transform
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.NormalDistribution.M">
+            <summary>
+            Average of normal distribution
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.NormalDistribution.sigma">
+            <summary>
+            A dispersion of normal distribution
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.NormalDistribution.#ctor(System.Double,System.Double)">
+            <summary>
+            Creates a normal distribution class
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.NormalDistribution.Distribute(System.Random)">
+            <summary>
+            Returns normally distributed values.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.CompatibilityReport">
+            <summary>
+            A class to contain results of compatibility checking.
+            Inside this class, a collection of string exists. You may add message to collection, fetch one message or all of them, etc.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.CompatibilityReport.reports">
+            <summary>
+            Collection of reports
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.CompatibilityReport.GetMessage(System.Int32)">
+            <summary>
+            Gets a message at the specified index
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.CompatibilityReport.GetAllMessages">
+            <summary>
+            Gets a string with all messages, separated with newline
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.CompatibilityReport.AddMessage(System.String)">
+            <summary>
+            Adds a message to report
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.CompatibilityReport.Count">
+            <summary>
+            Returns a count of messages
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.CompatibilityReport.HasMessages">
+            <summary>
+            Returns true, if report has messages
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningForm">
+            <summary>
+            A form which may be used as a form for learning process.
+            Learning form creates an object of LearningConsole, and redirects SetState and GetCommand methods to it. By overriding these methods, you may use your own console. Created console is not added in Controls array by default. 
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.ShowIterationInfo(DCIMAP.GANS.Basic.LearningIterationInfo)">
+            <summary>
+            Updates information about iteration. Do not forget to run base method when overriding, if you want LearningConsole to display time and iterations count.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningForm.learningConsole">
+            <summary>
+            A Learning Console. It is always created, but you may remove it from Form
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.GetCommand">
+            <summary>
+            Gets a command from UI
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.SetState(DCIMAP.GANS.Basic.DriverState)">
+            <summary>
+            Displays an actual state of driver
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningForm.isupervisorPanel">
+            <summary>
+            Supervisor panel
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.SetSupervisorPanel(System.Windows.Forms.Control)">
+            <summary>
+            Sets a supervisor panel
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.ShowSupervisorInfo(System.Object)">
+            <summary>
+            Updates a supervisor's information
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningForm.learningUI">
+            <summary>
+            An interface of learning UI
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.#ctor">
+            <summary>
+            Creates a learning form
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.CloseFromDriver">
+            <summary>
+            Closes form when driver stops. The form cannot be closed by other methods to prevent closing form without stopping driver.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.OnClosing(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Checks if form was closed from driver
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningForm.SetLearningUI(DCIMAP.GANS.Basic.FormLearningUI)">
+            <summary>
+            Sets a learning interface
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningForm.LearningConsole">
+            <summary>
+            Gets a predifined learning console
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningForm.SupervisorPanel">
+            <summary>
+            Gets or sets supervisor panel
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.LearningForm.LearningUI">
+            <summary>
+            An interface of learning UI
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.LearningConsole">
+            <summary>
+            This control is a console for learning process. It allows to input commands to driver, and can represent a state of driver.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.LearningConsole.cmd">
+            <summary>
+            Current command
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.#ctor(DCIMAP.GANS.Basic.LearningForm)">
+            <summary>
+            Creates a learning console
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.DisplayState(System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Displays a state, and also enables and disables buttons
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.DisableAll">
+            <summary>
+            Disables all buttons (after one of them is clicked)
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.SetIterationsAndTime(System.Int64,System.Double)">
+            <summary>
+            Shows count of iterations and time
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.SetState(DCIMAP.GANS.Basic.DriverState)">
+            <summary>
+            Sets a state of driver
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.stop_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handlers a clicking on 'stop' button
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.pause_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handlers a clicking on 'pause' button
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.resume_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handlers a clicking on 'resume' button
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.step_Click(System.Object,System.EventArgs)">
+            <summary>
+            Handlers a clicking on 'step' button
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.LearningConsole.GetCommand">
+            <summary>
+            Gets a command, inputed by user
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.FormLearningUI">
+            <summary>
+            A UI Driver component, which is to be used for Windows GUI.
+            Since calculations and UI are run in separate threads, this class provides thread-safe invoking of form's methods.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.Start">
+            <summary>
+            Shows a form
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.Stop">
+            <summary>
+            Closes a form
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.ShowIterationInfo(DCIMAP.GANS.Basic.LearningIterationInfo)">
+            <summary>
+            Updates iteration info
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.ShowSupervisorInfo(System.Object)">
+            <summary>
+            Updates a supervisor info
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.GetCommand">
+            <summary>
+            Gets a command to output panel
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.SetState(DCIMAP.GANS.Basic.DriverState)">
+            <summary>
+            Displays a current state of driver
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.FormLearningUI.form">
+            <summary>
+            A form which provides a GUI
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.#ctor(DCIMAP.GANS.Basic.LearningForm)">
+            <summary>
+            Creates an instance of FormLearningUI
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.Basic.FormLearningUI.InputParameters">
+            <summary>
+            Shows a dialog with parameters. Returns true if parameters were changed
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.Basic.FormLearningUI.Form">
+            <summary>
+            A form which provides a GUI
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.UICommand">
+            <summary>
+            Commands which UI can give to driver
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UICommand.No">
+            <summary>
+            No commands
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UICommand.Close">
+            <summary>
+            Stop learning process
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UICommand.Pause">
+            <summary>
+            Pause learning process
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UICommand.Resume">
+            <summary>
+            Resume learning process
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UICommand.Step">
+            <summary>
+            Makes one iteration in Pause mode
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UICommand.Apply">
+            <summary>
+            Apply parameters and restart driver
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.UICommand.Finished">
+            <summary>
+            Learning was finished. This command may be given by supervisor or count of iterations
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.Basic.DriverState">
+            <summary>
+            A possible state of driver
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Enter">
+            <summary>
+            Initial state
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Open">
+            <summary>
+            Driver is loaded
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Start">
+            <summary>
+            Session is opened
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Work">
+            <summary>
+            Driver is working
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Stop">
+            <summary>
+            Driver is being stopped (paused)
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Close">
+            <summary>
+            Driver is closing
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Exit">
+            <summary>
+            Driver is ready to exit
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.Basic.DriverState.Finished">
+            <summary>
+            Learning was ordered to be finished
+            </summary>
+        </member>
+    </members>
+</doc>

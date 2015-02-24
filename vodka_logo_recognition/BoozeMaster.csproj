@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0268F4C-B686-4F94-97E6-4E68FEB9FBA9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BoozeMaster</RootNamespace>
+    <AssemblyName>BoozeMaster</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.1.0.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.1.0.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.1.0.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Neuro, Version=2.1.0.0, Culture=neutral, PublicKeyToken=2094f4ea39731d4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\AForge.Neuro.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Vision, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b612fa915eefaa06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\AForge.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="DCIMAP.GANS.Basic, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\GANS\DCIMAP.GANS.Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="DCIMAP.GANS.NeuralSystems, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\GANS\DCIMAP.GANS.NeuralSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="DCIMAP.GANS.NeuralSystems.Kit, Version=1.0.3634.41607, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\GANS\DCIMAP.GANS.NeuralSystems.Kit.dll</HintPath>
+    </Reference>
+    <Reference Include="DCIMAP.Thornado.Old, Version=1.0.3623.35450, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\GANS\DCIMAP.Thornado.Old.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GansClassifier.cs" />
+    <Compile Include="Imaging\AForgeImagePreprocessor.cs" />
+    <Compile Include="ClassifiedTrademark.cs" />
+    <Compile Include="ColorMomentANNClassifier.cs" />
+    <Compile Include="ColorMomentMetricClassifier.cs" />
+    <Compile Include="Framework\CrossValidationEstimator.cs" />
+    <Compile Include="Framework\NaiveEstimator.cs" />
+    <Compile Include="Framework\IEstimator.cs" />
+    <Compile Include="HistogramExtractor.cs" />
+    <Compile Include="HslColorMomentsMetric.cs" />
+    <Compile Include="HslColorMomentsExtractor.cs" />
+    <Compile Include="Framework\IClassifier.cs" />
+    <Compile Include="Framework\IFeatureExtractor.cs" />
+    <Compile Include="Framework\IMetric.cs" />
+    <Compile Include="Imaging\IImagePreprocessor.cs" />
+    <Compile Include="Problem sources\FileNameBasedProblemSource.cs" />
+    <Compile Include="Problem sources\IProblemSource.cs" />
+    <Compile Include="Problem sources\ProblemInstance.cs" />
+    <Compile Include="Problem sources\RandomProblemSource.cs" />
+    <Compile Include="Problem sources\RatioBasedProblemSource.cs" />
+    <Compile Include="TrademarkRepository.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

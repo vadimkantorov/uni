@@ -1,0 +1,387 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:Reality.cs" caret="198" fromTop="10" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:ILog.cs" caret="41" fromTop="2" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:Point.cs" caret="623" fromTop="32" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:MoveInfo.cs" caret="57" fromTop="4" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:State.cs" caret="335" fromTop="4" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:AngleUtils.cs" caret="456" fromTop="14" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:Fighter.cs" caret="329" fromTop="5" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:IOUtils.cs" caret="2992" fromTop="12" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:Program.cs" caret="332" fromTop="6" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:SniperMarkStrategy.cs" caret="256" fromTop="11" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:SniperJackStrategy.cs" caret="268" fromTop="11" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:Log.cs" caret="0" fromTop="0" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:NullLogger.cs" caret="126" fromTop="10" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:Tactics.cs" caret="274" fromTop="6" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:MinigunLennyStrategy.cs" caret="18" fromTop="0" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:Strategy.cs" caret="809" fromTop="19" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:ChargeTactics.cs" caret="66" fromTop="4" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:CycleTactics.cs" caret="206" fromTop="6" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:DeadlyTactics.cs" caret="155" fromTop="8" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:DefaultTactics.cs" caret="752" fromTop="34" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:RollbackTactics.cs" caret="347" fromTop="14" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:RotateTactics.cs" caret="540" fromTop="16" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:LinearTactics.cs" caret="194" fromTop="8" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:Priorities.cs" caret="515" fromTop="12" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="3665" fromTop="12" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:GameProtocolException.cs" caret="54" fromTop="4" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:DestroyTactics.cs" caret="528" fromTop="25" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:SniperBobStrategy.cs" caret="467" fromTop="14" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:MinigunGordonStrategy.cs" caret="469" fromTop="17" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:FighterFactory.cs" caret="615" fromTop="21" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:SniperBobStrategy.cs" caret="213" fromTop="4" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:SniperBobStrategy.cs" caret="956" fromTop="14" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:SniperBobStrategy.cs" caret="813" fromTop="11" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="790" fromTop="0" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="790" fromTop="5" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="790" fromTop="0" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="790" fromTop="0" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="790" fromTop="0" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="928" fromTop="13" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="790" fromTop="1" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:DeadlyTactics.cs" caret="155" fromTop="8" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:FighterFactory.cs" caret="925" fromTop="25" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="938" fromTop="29" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="1112" fromTop="27" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="1329" fromTop="28" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:FighterFactory.cs" caret="925" fromTop="22" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="1803" fromTop="6" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="2851" fromTop="10" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="3795" fromTop="10" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:MinigunGordonStrategy.cs" caret="296" fromTop="12" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:Priorities.cs" caret="103" fromTop="4" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:Priorities.cs" caret="426" fromTop="10" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Tactics/f:DestroyTactics.cs" caret="802" fromTop="25" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:MinigunGordonStrategy.cs" caret="476" fromTop="18" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:FighterFactory.cs" caret="67" fromTop="4" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:BaseStrategy.cs" caret="3669" fromTop="28" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:FighterFactory.cs" caret="926" fromTop="25" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/f:FighterFactory.cs" caret="969" fromTop="25" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:SniperBobStrategy.cs" caret="467" fromTop="14" />
+      <File id="BF200BE0-094B-4CAB-8B2B-3730670DEC41/d:Strategies/f:MinigunGordonStrategy.cs" caret="291" fromTop="11" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="40" />
+      <Item value="Program" priority="3" />
+      <Item value="foreach" priority="0" />
+      <Item value="private" priority="8" />
+      <Item value="Tactics" priority="1" />
+      <Item value="new" priority="36" />
+      <Item value="List&lt;Tactics&gt;" priority="0" />
+      <Item value="Convert" priority="0" />
+      <Item value="Console" priority="2" />
+      <Item value="int" priority="16" />
+      <Item value="InitData" priority="4" />
+      <Item value="Point" priority="6" />
+      <Item value="double" priority="5" />
+      <Item value="char" priority="2" />
+      <Item value="string" priority="7" />
+      <Item value="FighterProperties" priority="4" />
+      <Item value="TypeName" priority="0" />
+      <Item value="type" priority="5" />
+      <Item value="switch" priority="0" />
+      <Item value="case" priority="5" />
+      <Item value="break" priority="5" />
+      <Item value="Speed" priority="3" />
+      <Item value="Damage" priority="6" />
+      <Item value="Accuracy" priority="4" />
+      <Item value="ShotCost" priority="6" />
+      <Item value="SightRadius" priority="2" />
+      <Item value="DamageRadius" priority="2" />
+      <Item value="if" priority="24" />
+      <Item value="SightAngle" priority="1" />
+      <Item value="else" priority="2" />
+      <Item value="Math" priority="2" />
+      <Item value="data" priority="3" />
+      <Item value="Strategy" priority="5" />
+      <Item value="static" priority="5" />
+      <Item value="var" priority="10" />
+      <Item value="FighterFactory" priority="0" />
+      <Item value="return" priority="18" />
+      <Item value="Dictionary" priority="1" />
+      <Item value="Fighter" priority="12" />
+      <Item value="fighters" priority="1" />
+      <Item value="strategy" priority="0" />
+      <Item value="Properties" priority="2" />
+      <Item value="Health" priority="1" />
+      <Item value="base" priority="2" />
+      <Item value="while" priority="1" />
+      <Item value="void" priority="3" />
+      <Item value="output" priority="8" />
+      <Item value="fighter" priority="5" />
+      <Item value="DescribeNewbornFighter" priority="0" />
+      <Item value="MoveInfo" priority="1" />
+      <Item value="State" priority="3" />
+      <Item value="state" priority="5" />
+      <Item value="move" priority="13" />
+      <Item value="out" priority="0" />
+      <Item value="this" priority="1" />
+      <Item value="reality" priority="15" />
+      <Item value="IOUtils" priority="2" />
+      <Item value="TextReader" priority="0" />
+      <Item value="TextWriter" priority="0" />
+      <Item value="input" priority="3" />
+      <Item value="io" priority="0" />
+      <Item value="p" priority="1" />
+      <Item value="DescribePoint" priority="2" />
+      <Item value="sync" priority="0" />
+      <Item value="ReadInt" priority="13" />
+      <Item value="Reality" priority="1" />
+      <Item value="params" priority="0" />
+      <Item value="Array" priority="0" />
+      <Item value="allowed" priority="1" />
+      <Item value="val" priority="0" />
+      <Item value="throw" priority="0" />
+      <Item value="message" priority="0" />
+      <Item value="GameProtocolException" priority="0" />
+      <Item value="parameterName" priority="0" />
+      <Item value="EnsureInValues" priority="0" />
+      <Item value="liveliness" priority="1" />
+      <Item value="currentFighter" priority="5" />
+      <Item value="ReadString" priority="4" />
+      <Item value="f" priority="6" />
+      <Item value="ReadPoint" priority="0" />
+      <Item value="global" priority="0" />
+      <Item value="isFriend" priority="0" />
+      <Item value="team" priority="3" />
+      <Item value="coords" priority="0" />
+      <Item value="Enumerable" priority="0" />
+      <Item value="friendCount" priority="0" />
+      <Item value="continue" priority="0" />
+      <Item value="List" priority="0" />
+      <Item value="List&lt;State&gt;" priority="1" />
+      <Item value="history" priority="4" />
+      <Item value="ITactics" priority="6" />
+      <Item value="const" priority="1" />
+      <Item value="Priorities" priority="15" />
+      <Item value="Priority" priority="5" />
+      <Item value="File" priority="0" />
+      <Item value="path" priority="0" />
+      <Item value="AvailableTactics" priority="4" />
+      <Item value="RotateTactics" priority="2" />
+      <Item value="DriveInfo" priority="0" />
+      <Item value="System" priority="4" />
+      <Item value="Debugger" priority="4" />
+      <Item value="initData" priority="2" />
+      <Item value="Diagnostics" priority="3" />
+      <Item value="source" priority="2" />
+      <Item value="is" priority="2" />
+      <Item value="info" priority="1" />
+      <Item value="Decimal" priority="0" />
+      <Item value="WayPoints" priority="1" />
+      <Item value="index" priority="0" />
+      <Item value="true" priority="1" />
+      <Item value="DeadlyTactics" priority="2" />
+      <Item value="Destination" priority="0" />
+      <Item value="oldCoords" priority="1" />
+      <Item value="CanMove" priority="0" />
+      <Item value="Reflect" priority="0" />
+      <Item value="bool" priority="5" />
+      <Item value="reflect" priority="2" />
+      <Item value="ref" priority="1" />
+      <Item value="Angle" priority="0" />
+      <Item value="ReadAngle" priority="0" />
+      <Item value="PrintAngle" priority="0" />
+      <Item value="wp" priority="0" />
+      <Item value="BaseStrategy" priority="3" />
+      <Item value="SniperJackStrategy" priority="0" />
+      <Item value="DefaultTactics" priority="3" />
+      <Item value="MinigunGordonStrategy" priority="1" />
+      <Item value="MinigunLennyStrategy" priority="0" />
+      <Item value="manager" priority="1" />
+      <Item value="ResourceManager" priority="0" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="0" />
+      <Item value="StringWriter" priority="0" />
+      <Item value="hc" priority="0" />
+      <Item value="filePath" priority="0" />
+      <Item value="Environment" priority="1" />
+      <Item value="StringSplitOptions" priority="0" />
+      <Item value="ChargeTactics" priority="0" />
+      <Item value="tactics" priority="2" />
+      <Item value="cur" priority="0" />
+      <Item value="CurrentTactics" priority="1" />
+      <Item value="bestTactics" priority="0" />
+      <Item value="CharEnumerator" priority="0" />
+      <Item value="DestroyTactics" priority="0" />
+      <Item value="CycleTactics" priority="0" />
+      <Item value="LinearTactics" priority="2" />
+      <Item value="override" priority="1" />
+      <Item value="prev" priority="1" />
+      <Item value="alternative" priority="2" />
+      <Item value="ImportWayPoints" priority="0" />
+      <Item value="lt2" priority="0" />
+      <Item value="null" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="ReadLine" priority="0" />
+      <Item value="In" priority="0" />
+      <Item value="Out" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Trim" priority="1" />
+      <Item value="Split" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="PI" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.InitData">
+      <Item value="Number" priority="3" />
+      <Item value="Team" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.Program">
+      <Item value="Start" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextWriter">
+      <Item value="WriteLine" priority="7" />
+      <Item value="Flush" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.Fighter">
+      <Item value="Properties" priority="1" />
+      <Item value="Mana" priority="1" />
+      <Item value="IsAlive" priority="2" />
+      <Item value="Coordinates" priority="4" />
+      <Item value="Angle" priority="1" />
+      <Item value="Health" priority="2" />
+      <Item value="Log" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.FighterProperties">
+      <Item value="TypeName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.Strategy">
+      <Item value="MakeMove" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Nullable`1">
+      <Item value="Equals" priority="0" />
+      <Item value="Value" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.Point">
+      <Item value="X" priority="3" />
+      <Item value="Y" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.MoveInfo">
+      <Item value="Destination" priority="7" />
+      <Item value="Angle" priority="1" />
+      <Item value="FireTarget" priority="0" />
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Double">
+      <Item value="ToDegrees" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.IOUtils">
+      <Item value="ParseInitData" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.Reality">
+      <Item value="ActiveFighter" priority="2" />
+      <Item value="Friends" priority="2" />
+      <Item value="Enemies" priority="3" />
+      <Item value="Messages" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Array">
+      <Item value="Find" priority="0" />
+      <Item value="IndexOf" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Join" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToArray" priority="0" />
+      <Item value="Select" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToRadians" priority="0" />
+      <Item value="GetType" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.TextReader">
+      <Item value="ReadLine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add" priority="6" />
+      <Item value="AddRange" priority="0" />
+      <Item value="Count" priority="0" />
+      <Item value="Last" priority="0" />
+      <Item value="LastIndexOf" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Linq.Enumerable">
+      <Item value="Range" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Okulobot.Priorities">
+      <Item value="RotateTactics" priority="1" />
+      <Item value="RollbackTactics" priority="1" />
+      <Item value="LinearTactics" priority="1" />
+      <Item value="DestroyTactics" priority="2" />
+      <Item value="CycleTactics" priority="1" />
+      <Item value="ChargeTactics" priority="0" />
+      <Item value="DeadlyTactics" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.State">
+      <Item value="Enemies" priority="0" />
+      <Item value="InitData" priority="1" />
+      <Item value="Fighter" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="WriteAllText" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Diagnostics.Debugger">
+      <Item value="Break" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Stack`1">
+      <Item value="Count" priority="1" />
+      <Item value="Clear" priority="0" />
+      <Item value="Peek" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.ILog">
+      <Item value="Write" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.WayPoint">
+      <Item value="Coordinates" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.DefaultTactics">
+      <Item value="AddInnerTactics" priority="2" />
+      <Item value="Priority" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Resources.ResourceManager">
+      <Item value="GetStream" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StringReader">
+      <Item value="ReadToEnd" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="NewLine" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.StringSplitOptions">
+      <Item value="RemoveEmptyEntries" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.ITactics">
+      <Item value="Priority" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Okulobot.LinearTactics">
+      <Item value="WayPoints" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

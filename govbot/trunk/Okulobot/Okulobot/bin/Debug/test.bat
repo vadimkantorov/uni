@@ -1,0 +1,1 @@
+GAME P Battlemap.bmp 5 govbot.exe govbot.exe log.txt

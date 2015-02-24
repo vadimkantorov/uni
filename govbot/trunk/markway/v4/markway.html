@@ -1,0 +1,534 @@
+<style>
+#map {
+	width: 800;
+	height: 600;
+	padding: 0;
+	border: 0;
+}
+#field {
+	position: absolute;
+	border-right: 0px solid black;
+	border-bottom: 0px solid black;
+	padding: 0;
+	margin: 0;
+	width: 800px;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+#wp {
+	border: 1px solid black;
+	position: absolute;
+	left: 801px;
+	top: 0;
+	height: 600px;
+	width: 200px;
+	overflow-y: scroll;
+}
+#options {
+	padding: 5px;
+	position: absolute;
+	top: 601px;
+	width: 800px;
+	border-top: 1px solid black;
+}
+#info {
+	width: 50;
+	border: 0px solid black;
+	padding: 5px;
+	float: right;
+}
+#inout {
+	width: 200px;
+	border: 0px solid black;
+	text-align: right;
+	position: absolute;
+	left: 800px;
+	top: 605px;
+	padding: 5px;
+	padding-right: 20px;
+}
+</style>
+<body>
+	<div id='field'>
+		<img id='map' src='Battlemap.bmp'/>
+	</div>
+	<div id='options'>
+		<div style='float:right; width: 150px'>
+			<div id='info'>info</div>
+			<button onclick='undo()'>Undo</button>
+		</div>
+		<form>
+			<b>Class:</b>
+			P[<input type='radio' checked='checked' name='class' value='P' onclick='clazz="P"'/>]&nbsp;&nbsp;
+			M[<input type='radio' name='class' value='M' onclick='clazz="M"'/>]&nbsp;&nbsp;
+			S[<input type='radio' name='class' value='S' onclick='clazz="S"'/>]&nbsp;&nbsp;
+			R[<input type='radio' name='class' value='R' onclick='clazz="R"'/>]&nbsp;&nbsp;
+			F[<input type='radio' name='class' value='F' onclick='clazz="F"'/>]
+		</form>
+	</div>
+	<div id='wp'>
+<center style='font-size: 15px'>Маршрут:</center>
+	</div>
+	<div id='inout'>
+		<input type='file' name='save'/>&nbsp;&nbsp;
+		<input type='file' name='load'/>&nbsp;&nbsp;
+	</div>
+</body>
+<script>
+// # view #
+var clazz = 'P';
+var clazzOpts = {
+    'P': { 'speed': 15, 'angle': Math.PI / 2, 'distance': 50 },
+    'M': { 'speed': 12, 'angle': Math.PI / 2, 'distance': 50  },
+    'S': { 'speed': 10, 'angle': Math.PI / 6, 'distance': 100  },
+    'R': { 'speed': 10, 'angle': Math.PI / 2, 'distance': 50  },
+    'F': { 'speed': 10, 'angle': Math.PI / 2, 'distance': 50  }
+};
+// # shorthand #
+function bear(parent, name) {
+	var e = be(name);
+	parent.appendChild(e);
+	return e;
+}
+function be(name) {
+	return document.createElement(name);
+}
+function get(id) {
+	return document.getElementById(id);
+}
+// # compatibility #
+function bind(listener, event, fun, ifCapture) {
+	if(listener.addEventListener) 
+		listener.addEventListener(event, fun, ifCapture);
+	else if(ifCapture) listener.attachEvent('on'+event, fun);
+		else listener['on'+event] = fun;
+}
+// # mouse #
+function getMouseAbsCoords(ev) {
+	ev = ev || window.event;
+	var x,y;
+	if(ev.pageX || ev.pageY){
+		x = ev.pageX;
+		y = ev.pageY;
+	} else { 
+		x = ev.clientX + document.body.scrollLeft - document.body.clientLeft; 
+		y = ev.clientY + document.body.scrollTop  - document.body.clientTop;
+	}
+	return {"x":x,"y":y}
+}
+
+// # игромеханика #
+function CanGo(x0, y0, x1, y1, length) {
+	if(!Inside(x0, y0))
+		return false;
+	if(!Inside(x1, y1))
+		return false;
+	if(Math.Sqrt(Math.Pow(x1 - x0, 2) + Math.Pow(y1 - y0, 2)) > length)
+		return false;
+}
+function Inside(x,y) {
+	if(x<0 || x>199 || y<0 || y>149) return false;
+	return true;
+}
+
+// # main #
+var info = get('info');
+var wp = get('wp');
+var map = get('map');
+var field = get('field');
+var ifMouseDown = 0;
+// pointer
+var p = bear(field, 'div');
+p.style.background = 'red';
+var pWidth = 4;
+var pHeight = 4;
+p.style.width = pWidth+'px';
+p.style.height = pHeight+'px';
+p.style.position = 'absolute';
+p.style.fontSize = '0px';
+// маршрут
+function waypoints() {
+	this.wps = new list();
+	this.addAtEnd = function(x,y,angle) {
+		// x и y в координатах карты!
+		this.wps.addAtEnd({'x':x,'y':y,'angle':angle});
+	}
+	this.top = function() {
+		return this.wps.top();
+	}
+	this.deleteTop = function() {
+		this.wps.deleteTop();
+	}
+}
+// список
+function list() { 
+	this.elements = {};
+	this.id = 1; // незанятый id
+	this.topId = null; // id последнего элемента
+	this.top = function() {
+		if(this.topId==null) return null;
+		return this.elements[this.topId]
+	}
+	this.addAtEnd = function(content) {
+		if(this.topId!=null) this.insertAfter(this.topId, content);
+		else {
+			var c = {
+				'prevId': null,
+				'nextId': null,
+				'id': this.id,
+				'content': content
+			};
+			this.elements[this.id] = c;
+			this.topId = this.id++;
+		}
+	}
+	this.insertAfter = function(id,content) {
+		if(!this.elements[id]) throw "no such element";
+		var pr = this.elements[id];
+		var c = {
+			'prevId': id,
+			'nextId': pr.nextId,
+			'id': this.id,
+			'content': content
+		};
+		if(pr.nextId) {
+			this.elements[pr.nextId].prevId = this.id;
+		} else {
+			this.topId = this.id;
+		}
+		pr.nextId = this.id;
+		this.elements[this.id++] = c;	
+	}
+	this.deleteTop = function() {
+		if(this.topId==null) return;
+		var prid = this.elements[this.topId].prevId;
+		if(prid) {
+			this.elements[prid].nextId = null;
+		}
+		delete this.elements[this.topId];
+		this.topId = prid;
+	}
+}
+// элемент списка
+function listElement(prev, next, content) {
+	this.prev = prev;
+	this.next = next;
+	this.content = content;
+}
+// движение курсора
+function movePoint(ev) {
+	ev = ev || window.ev;
+	var mac = getMouseAbsCoords(ev);
+	var x = mac.x - mac.x%pWidth;
+	var y = mac.y - mac.y%pHeight;
+	info.innerHTML = '';
+	// если превышаем допустимый шаг, окончить
+	info.innerHTML += "x: "+x/pWidth+"<br/>";
+	info.innerHTML += "y: "+y/pHeight+"<br/>";
+	if(WPS.top()) {
+		var ss = WPS.top().content;
+		var xl = (x/pWidth) - ss.x;
+		var yl = (y/pWidth) - ss.y;
+		var l = parseInt(Math.sqrt(xl*xl + yl*yl));
+		info.innerHTML += "L: "+l+"<br/>";
+	}	
+	var speed = clazzOpts[clazz].speed;
+	if(l && l > speed) return;
+	p.style.left = x;
+	p.style.top = y;
+	return {'x':x,'y':y};
+}
+// события и действия
+var currentArrow;
+var WPS = new waypoints();
+map.onmousemove = function(ev) {
+	ev = ev || window.ev;
+	var cc = movePoint(ev);
+	if(cc) {
+		deleteArrow('currentArrow');	
+		if(WPS.top() != null)	{
+			var tt = WPS.top().content;
+			drawArrow({'x':tt.x*pWidth, 'y':tt.y*pHeight}, cc, 'currentArrow');
+		}
+	}
+}
+
+field.onclick = function(ev) {
+	ev = ev || window.ev;
+	ifMouseDown = 1;
+	var cc = movePoint(ev);
+	if(cc && ifMouseDown) {
+		drawRedPoint(cc.x, cc.y, WPS.wps.id);
+		redrawAngle(cc.x, cc.y);
+		WPS.addAtEnd(cc.x/pWidth, cc.y/pHeight, CurrentAngleDirection);
+		redrawWps();
+	}
+	ifMouseDown = 0;
+}
+function renewTopAngle() {
+	if(!WPS.top()) return;
+	redrawAngle();
+	var top = WPS.top().content;
+	WPS.deleteTop();
+	WPS.addAtEnd(top.x, top.y, CurrentAngleDirection);
+	redrawWps();
+}
+//
+var LastAngleId;
+var CurrentAngleDirection = 0;
+var AngleX;
+var AngleY;
+function redrawAngle(x, y) {
+	AngleX = x || AngleX;
+	AngleY = y || AngleY;
+	deleteAngle();
+	//  x, y, direction, wide, sideLength
+	LastAngleId = ANGLE.draw(AngleX, AngleY, CurrentAngleDirection, clazzOpts[clazz].angle, clazzOpts[clazz].distance*pWidth);
+}
+function deleteAngle() {
+	LastAngleId && ANGLE.remove(LastAngleId);	
+}
+// вертим углом
+function manageAngle(ev) {
+	ev = ev || window.event;
+	var k = ev.keyCode||ev.which;
+	var angleStep = Math.PI/18;
+	switch(k) {
+		//left
+		case 37: CurrentAngleDirection = (CurrentAngleDirection+angleStep)%(2*Math.PI);  break;
+		//right
+		case 39: CurrentAngleDirection = (CurrentAngleDirection-angleStep)%(2*Math.PI); break;
+	}
+	window.status = CurrentAngleDirection;
+	if(CurrentAngleDirection < 0) CurrentAngleDirection = 2*Math.PI + CurrentAngleDirection;
+	redrawAngle(); renewTopAngle();
+}
+bind(window.document,'keydown',manageAngle,true);
+
+var ARROWS = new Array();
+function drawArrow(from, to, id) {
+	ARROWS[id] = new Array();
+	var sx = from.x;
+	var sy = from.y;
+	var dx = to.x;
+	var dy = to.y;
+	var w = dx - sx;
+	var h = dy - sy;
+	var stepx = 0;
+	if(w!=0) stepx = pWidth*Math.abs(w)/w ;
+	var stepy = 0;
+	if(h!=0) stepy = pHeight*Math.abs(h)/h;
+	var gonex = 0;
+	var goney = 0;
+	function makeX() {
+		gonex += stepx;
+		ARROWS[id].push(drawPoint(sx+gonex, sy+goney, 'lightgreen'));
+	}
+	function makeY() {
+		goney += stepy;
+		ARROWS[id].push(drawPoint(sx+gonex, sy+goney, 'lightgreen'));
+	}
+	var endx = Math.abs(w-stepx);
+	var endy = Math.abs(h-stepy);
+	var wh = Math.abs(w/h);
+	while( (Math.abs(gonex) < endx) || (Math.abs(goney) < endy)  ) {
+		if(w==0) makeY();
+		else {
+			if(h==0) makeX();
+			else {
+				if( Math.abs(gonex/goney) > wh ) makeY();
+				else makeX();
+			}
+		}
+	}
+	return id;
+}
+//
+var redPoints = {};
+function drawRedPoint(x,y,id) {
+	var p = drawPoint(x,y,'red');
+	if(WPS.top()!=null) {
+		var top = WPS.top().content;
+		var sx = top.x*pWidth;
+		var sy = top.y*pHeight;
+		var dx = parseInt(p.style.left);
+		var dy = parseInt(p.style.top);
+		drawArrow({'x':sx,'y':sy},{'x':dx,'y':dy},id);
+	}
+	redPoints[id] = p;
+	return p;
+}
+function deleteRedPoint(id) {
+	if(!redPoints[id]) return;
+	redPoints[id].parentNode.removeChild(redPoints[id]);
+	delete redPoints[id];
+}
+//
+function drawPoint(x,y,color) {
+	var p = bear(field,'div');
+	p.style.fontSize = '1px';
+	p.style.width = pWidth+'px';
+	p.style.height = pHeight+'px';
+	p.style.position = 'absolute';
+	p.style.left = x;
+	p.style.top = y;
+	p.style.backgroundColor = color;
+	return p;
+}
+function deleteArrow(id) {
+	var w;
+	if(!ARROWS[id]) return;
+	while(w = ARROWS[id].pop()) {
+		w.parentNode.removeChild(w);
+	}
+	delete ARROWS[id];
+}
+//
+function undo() {
+	deleteArrow('currentArrow');
+	deleteAngle();
+//	try {
+	if(WPS.top()) {
+		deleteRedPoint(WPS.wps.topId);
+		deleteArrow(WPS.wps.topId);
+		WPS.deleteTop();
+		redrawWps();
+	} 
+//	} catch(e) {
+//		alert(WPS.deleteTop)
+//	} 
+}
+function redrawWps() {
+	var wp = get('wp');
+	wp.innerHTML='';
+	var top = WPS.top();
+	if(!top) return;
+	while(top.prevId) top = WPS.wps.elements[top.prevId];
+	while(top.nextId) {
+		wp.innerHTML += "("+top.content.x+", "+top.content.y+", "+(Math.round(top.content.angle*100)/100)+")<br/>";
+		top = WPS.wps.elements[top.nextId];
+	}
+	wp.innerHTML += "("+top.content.x+", "+top.content.y+", "+(Math.round(top.content.angle*100)/100)+")";
+};
+
+
+
+
+
+// # ANGLES #
+// рисует пиксель в абсолютных координатах document'а
+// зависимости: field
+function drawPixel(x,y) {
+	var p = bear(field,'div');
+	p.style.fontSize = '0px';
+	p.style.width = '1px';
+	p.style.height = '1px';
+	p.style.position = 'absolute';
+	p.style.left = x;
+	p.style.top = y;
+	p.style.backgroundColor = 'black';
+	return p;
+}
+//
+function Line() {
+	this.s = {};
+	var freeId = 1;
+	this.draw = function(sx,sy,dx,dy) {
+		var id = freeId++;
+		this.s[id] = drawLine({'x':sx,'y':sy}, {'x':dx,'y':dy});
+		return id;
+	};
+	this.remove = function(id) {
+		var p;
+		while(p = this.s[id].pop()) {
+			p.parentNode.removeChild(p);
+		}
+		delete this.s[id];
+	}
+}
+// рисует тонкую линию
+// координаты: абсолютные для document (не для карты)
+// зависимости: drawPixel
+function drawLine(from, to) {
+	var sx = from.x;
+	var sy = from.y;
+	var dx = to.x;
+	var dy = to.y;
+	// TODO: delete
+	//alert('from:'+sx+'_'+sy+' to:'+to.x+'_'+to.y);
+	var w = dx - sx;
+	var h = dy - sy;
+	var stepx = 0;
+	if(w!=0) stepx = Math.abs(w)/w;
+	var stepy = 0;
+	if(h!=0) stepy = Math.abs(h)/h;
+	var gonex = 0;
+	var goney = 0;
+	var dots = [];
+	function makeX() {
+		gonex += stepx;
+		dots.push(drawPixel(sx+gonex, sy+goney));
+	}
+	function makeY() {
+		goney += stepy;
+		dots.push(drawPixel(sx+gonex, sy+goney));
+	}
+	var endx = Math.abs(w-stepx);
+	var endy = Math.abs(h-stepy);
+	var wh = Math.abs(w/h);
+	while( (Math.abs(gonex) < endx) || (Math.abs(goney) < endy)  ) {
+		if(w==0) makeY();
+		else {
+			if(h==0) makeX();
+			else {
+				if( Math.abs(gonex/goney) > wh ) makeY();
+				else makeX();
+			}
+		}
+	}
+	return dots;
+}
+//
+var ANGLE = new Angle();
+function Angle() {
+	var LINE = new Line();
+	this.s = {};
+	var freeId = 1;
+	this.draw = function(x, y, direction, wide, sideLength) {
+		var a = drawAngle(x, y, direction, wide, sideLength);
+		var id = freeId++;
+		this.s[id] = a;
+		return id;
+	};
+	this.remove = function(id) {
+		var l;
+		if(!this.s[id]) return;
+		while(l = this.s[id].pop()) {
+			LINE.remove(l)
+		}
+		delete this.s[id];
+	}
+	// private 
+	/* рисует угол с началом в x,y шириной wide радиан, смотрящий в direction(в радианах) и
+	 * со сторонами длиной sideLength пикселей
+	 * direction отсчитывается против часовой от 0
+	 */
+	function drawAngle(x, y, direction, wide, sideLength) {
+		var fy = sideLength*Math.sin(direction - wide/2);
+		var fx = sideLength*Math.cos(direction - wide/2);
+		var sy = sideLength*Math.sin(direction + wide/2);
+		var sx = sideLength*Math.cos(direction + wide/2);
+		var fid = LINE.draw(x,y,x+fx,y-fy);
+		var sid = LINE.draw(x,y,x+sx,y-sy);
+		///alert(y+fy);
+		//alert(y+sy);
+		return [fid,sid];
+	}
+}
+// ввод-вывод
+
+
+
+</script>

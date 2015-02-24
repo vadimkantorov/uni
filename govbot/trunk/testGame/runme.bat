@@ -1,0 +1,1 @@
+GAME P Battlemap.bmp 3 MyPlayer.exe MyPlayer.exe

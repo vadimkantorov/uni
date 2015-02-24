@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/9/trunk/BoozeMaster/Problem%20sources
+END
+RatioBasedProblemSource.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/9/trunk/BoozeMaster/Problem%20sources/RatioBasedProblemSource.cs
+END
+FileNameBasedProblemSource.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/9/trunk/BoozeMaster/Problem%20sources/FileNameBasedProblemSource.cs
+END
+RandomProblemSource.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/9/trunk/BoozeMaster/Problem%20sources/RandomProblemSource.cs
+END
+ProblemInstance.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/9/trunk/BoozeMaster/Problem%20sources/ProblemInstance.cs
+END
+IProblemSource.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/9/trunk/BoozeMaster/Problem%20sources/IProblemSource.cs
+END

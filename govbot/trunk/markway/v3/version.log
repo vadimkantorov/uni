@@ -1,0 +1,22 @@
+###########################################
+#     Markway                             #
+###########################################
+
+version: 2
+
+tests: 
+	FF 3 		-> slow + anti-alias 
+	Opera 10 alpha 	-> fine
+	IE 8		-> bugs + anti-alias
+	IE 6-7 		-> scripts don't work
+	Chrome		-> anti-alias
+
+changes:
+> v1
++ можно ставить точки
+> v2
++ предпросмотр маршрута
+> v3
++ ограничение на скорость
++ куча гр€зного кода
++ undo (сыро)

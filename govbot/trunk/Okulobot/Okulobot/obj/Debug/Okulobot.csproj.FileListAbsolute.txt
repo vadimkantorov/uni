@@ -1,0 +1,5 @@
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\bin\Debug\Okulobot.exe
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\bin\Debug\Okulobot.pdb
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\obj\Debug\ResolveAssemblyReference.cache
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\obj\Debug\Okulobot.exe
+H:\CS@USU\II\ТАЛГ\GovBot\trunk\Okulobot\Okulobot\obj\Debug\Okulobot.pdb

@@ -1,0 +1,6 @@
+"Discriminative Reranking for Spelling Correction"
+"A Large List of Confusion Sets for Spellchecking Assessed Against a Corpus of Real-word Errors"
+"A Large Scale Ranker-Based System for Search Query Spelling Correction"
+"An Improved Error Model for Noisy Channel Spelling Correction"
+"Pronunciation Modeling for Improved Spelling Correction"
+"A Discriminative Framework for Bilingual Word Alignment"

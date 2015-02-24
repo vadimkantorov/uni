@@ -1,0 +1,52 @@
+#-l:C:\SVN\Thornado\Thornado\DATA -save:yes -open:no 
+\dataSet
+{ 
+	\field[Point Location]
+		\desc Положение юнита
+	\field[bool Dead]
+		\desc Мертв ли этот юнит
+	\field[int DeadCountDown]
+		\desc Отчет до возрождения
+	\field[Point BirthLocation]
+		\desc Место возрождения
+	\field[int HP]
+		\desc Хитпоинты
+	\field[string Letter]
+		\desc Буква, которая зависит от типа, которая отображается в просмотре
+	\field[int Team]
+		\desc Номер команды
+	\field[int Number]
+		\desc Номер в команде
+	\field[double Angle]
+		\desc Текущее положение башки 
+	\field[double SightAngle]
+		\desc Угол обзора
+	\field[double SightLength]
+		\desc Дальность обзора
+	\field[int Mana]
+		\desc Количество маны
+	\field[int ShotCost]
+		\desc Стоимость выстрела
+	\field[int Speed]
+		\desc Возможная дальность
+	\field[int Radius]
+		\desc Радиус поражения
+	\field[int Damage]
+		\desc Повреждение
+	\field[int Precision]
+		\desc Шанс на попадание, в процентах (100 - всегда попадает, 0 - никогда)
+	\field[string LastEth]
+		\desc Последнее сообщение в эфир
+	
+}
+\csClass[1]
+
+
+
+
+
+
+
+
+
+

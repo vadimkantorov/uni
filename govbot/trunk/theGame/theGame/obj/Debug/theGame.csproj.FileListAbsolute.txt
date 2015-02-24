@@ -1,0 +1,12 @@
+D:\Workspace\TAlg\theGame\trunk\theGame\theGame\obj\Debug\ResolveAssemblyReference.cache
+D:\Workspace\TAlg\theGame\trunk\theGame\theGame\bin\Debug\theGame.exe
+D:\Workspace\TAlg\theGame\trunk\theGame\theGame\bin\Debug\theGame.pdb
+D:\Workspace\TAlg\theGame\trunk\theGame\theGame\obj\Debug\theGame.exe
+D:\Workspace\TAlg\theGame\trunk\theGame\theGame\obj\Debug\theGame.pdb
+C:\Documents and Settings\QK\Рабочий стол\GAME\trunk\theGame\theGame\obj\Debug\theGame.exe
+C:\Documents and Settings\QK\Рабочий стол\GAME\trunk\theGame\theGame\obj\Debug\theGame.pdb
+C:\Documents and Settings\QK\Рабочий стол\GAME_last\trunk\theGame\theGame\obj\Debug\theGame.exe
+C:\Documents and Settings\QK\Рабочий стол\GAME_last\trunk\theGame\theGame\obj\Debug\theGame.pdb
+C:\Documents and Settings\QK\Рабочий стол\GAME_last\trunk\theGame\theGame\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\QK\Рабочий стол\GAME_last\trunk\theGame\theGame\bin\Debug\theGame.exe
+C:\Documents and Settings\QK\Рабочий стол\GAME_last\trunk\theGame\theGame\bin\Debug\theGame.pdb

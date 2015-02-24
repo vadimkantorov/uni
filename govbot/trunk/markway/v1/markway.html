@@ -1,0 +1,279 @@
+<style>
+#map {
+	width: 800;
+	height: 600;
+	padding: 0;
+	border: 0;
+}
+#info {
+	width: 800;
+	border-top: 0px solid black;
+	padding: 5px
+}
+#field {
+	position: absolute;
+	border-right: 0px solid black;
+	padding: 0;
+	margin: 0;
+	width: 800;
+}
+body {
+	padding: 0;
+	margin: 0;
+}
+#wp {
+	border: 1px solid black;
+	position: absolute;
+	left: 801px;
+	top: 0;
+	height: 600px;
+	width: 200px;
+}
+</style>
+<body>
+	<div id='field'>
+		<img id='map' src='Battlemap.bmp'/>
+	</div>
+	<div id='info'>info</div>
+	<div id='wp'><center style='font-size: 15px'>Маршрут:</center></div>
+</body>
+<script>
+
+    var speeed = 10;
+
+// # shorthand #
+function bear(parent, name) {
+	var e = be(name);
+	parent.appendChild(e);
+	return e;
+}
+function be(name) {
+	return document.createElement(name);
+}
+function get(id) {
+	return document.getElementById(id);
+}
+// # compatibility #
+function bind(listener, event, fun, ifCapture) {
+	if(listener.addEventListener) 
+		listener.addEventListener(event, fun, ifCapture);
+	else if(ifCapture) listener.attachEvent('on'+event, fun);
+		else listener['on'+event] = fun;
+}
+// # mouse #
+function getMouseAbsCoords(ev) {
+	ev = ev || window.event;
+	var x,y;
+	if(ev.pageX || ev.pageY){
+		x = ev.pageX;
+		y = ev.pageY;
+	} else { 
+		x = ev.clientX + document.body.scrollLeft - document.body.clientLeft; 
+		y = ev.clientY + document.body.scrollTop  - document.body.clientTop;
+	}
+	return {"x":x,"y":y}
+}
+// # main #
+var info = get('info');
+var wp = get('wp');
+var map = get('map');
+var field = get('field');
+var ifMouseDown = 0;
+// pointer
+var p = bear(field, 'div');
+p.style.background = 'red';
+var pWidth = 4;
+var pHeight = 4;
+p.style.width = pWidth+'px';
+p.style.height = pHeight+'px';
+p.style.position = 'absolute';
+// маршрут
+function waypoints() {
+	this.wps = new list();
+	this.addAtEnd = function(x,y,angle) {
+		this.wps.addAtEnd({'x':x,'y':y,'angle':angle});
+	}
+	this.top = function() {
+		return this.wps.top();
+	}
+}
+
+function list() { // список
+	this.elements = {};
+	this.id = 0; // незанятый id
+	this.topId = null; // id последнего элемента
+	this.top = function() {
+		if(this.topId==null) return null;
+		return this.elements[this.topId]
+	}
+	this.addAtEnd = function(content) {
+		if(this.topId!=null) this.insertAfter(this.topId, content);
+		else {
+			var c = {
+				'prevId': null,
+				'nextId': null,
+				'id': this.id,
+				'content': content
+			};
+			this.elements[this.id] = c;
+			this.topId = this.id++;
+		}
+	}
+	this.insertAfter = function(id,content) {
+		if(!this.elements[id]) throw "no such element";
+		var pr = this.elements[id];
+		var c = {
+			'prevId': id,
+			'nextId': pr.nextId,
+			'id': this.id,
+			'content': content
+		};
+		if(pr.nextId) {
+			this.elements[pr.nextId].prevId = this.id;
+		} else {
+			this.topId = this.id;
+		}
+		pr.nextId = this.id;
+		this.elements[this.id++] = c;	
+	}
+}
+
+function listElement(prev, next, content) {
+	this.prev = prev;
+	this.next = next;
+	this.content = content;
+}
+
+function movePoint(ev) {
+	ev = ev || window.ev;
+	var mac = getMouseAbsCoords(ev);
+	var x = mac.x - mac.x%pWidth;
+	var y = mac.y - mac.y%pHeight;
+	info.innerHTML = "x: "+x/pWidth+"<br/>";
+	info.innerHTML += "y: "+y/pHeight;
+	p.style.left = x;
+	p.style.top = y;
+	return {'x':x,'y':y};
+}
+
+var currentArrow;
+var WPS = new waypoints();
+map.onmousemove = function(ev) {
+	ev = ev || window.ev;
+	var cc = movePoint(ev);
+	deleteArrow('currentArrow');
+	if(WPS.top()!=null)	{
+		var tt = WPS.top();
+		drawArrow(tt.content, cc, 'currentArrow');
+	}
+}
+
+field.onclick = function(ev) {
+	ev = ev || window.ev;
+	ifMouseDown = 1;
+	var cc = movePoint(ev);
+	if(ifMouseDown) {
+		drawPoint(cc.x,cc.y,WPS.id);
+		WPS.addAtEnd(cc.x,cc.y,0);
+		wp.innerHTML += 'x:'+cc.x+' y:'+cc.y+'<br/>';
+	}
+	ifMouseDown = 0;
+}
+
+function drawArrow(from, to, id) {
+	var sx = from.x;
+	var sy = from.y;
+	var dx = to.x;
+	var dy = to.y;
+	var w = dx - sx;
+	var h = dy - sy;
+	var stepx = 0;
+	if(w!=0) stepx = pWidth*Math.abs(w)/w ;
+	var stepy = 0;
+	if(h!=0) stepy = pHeight*Math.abs(h)/h;
+	var gonex = 0;
+	var goney = 0;
+	function makeX() {
+		gonex += stepx;
+		showPoint(sx+gonex, sy+goney, id);
+		}
+	function makeY() {
+		goney += stepy;
+		showPoint(sx+gonex, sy+goney, id);
+	}
+	while( (Math.abs(gonex) < Math.abs(w-stepx)) || (Math.abs(goney) < Math.abs(h-stepy))  ) {
+		if(w==0) makeY();
+		else {
+			if(h==0) makeX();
+			else {
+				if( Math.abs(gonex/goney) > Math.abs(w/h) ) makeY();
+				else makeX();
+			}
+		}
+	}
+	return id;
+}
+/*field.onmousedown = function(ev) {
+	ifMouseDown = 1;
+	movePoint(ev);
+}*/
+/*
+field.onmouseup = function() {
+	ifMouseDown = 0;
+}
+*/
+//
+var selectedWaypoint;
+function drawPoint(x,y,id) {
+	var p = bear(field,'div');
+	p.style.fontSize = '1px';
+	p.style.width = pWidth+'px';
+	p.style.height = pHeight+'px';
+	p.style.position = 'absolute';
+	p.style.left = x;
+	p.style.top = y;
+	p.style.backgroundColor = 'red';
+	if(!selectedWaypoint) {selectedWaypoint = p;}
+	else {
+		var sx = parseInt(selectedWaypoint.style.left);
+		var sy = parseInt(selectedWaypoint.style.top);
+		var dx = parseInt(p.style.left);
+		var dy = parseInt(p.style.top);
+		drawArrow({'x':sx,'y':sy},{'x':dx,'y':dy},id);
+		selectedWaypoint = p;
+	}
+	return p;
+}
+//
+var arrows = new Array();
+function showPoint(x,y,id) {
+	var p = bear(field,'div');
+	p.style.fontSize = '1px';
+	p.style.width = pWidth+'px';
+	p.style.height = pHeight+'px';
+	p.style.position = 'absolute';
+	p.style.left = x;
+	p.style.top = y;
+	p.style.backgroundColor = 'lightgreen';
+	if(!arrows[id]) {arrows[id] = new Array()} else { arrows[id].push(p); };
+}
+function deleteArrow(id) {
+	for(var w in arrows[id]) {
+		arrows[id][w].parentNode.removeChild(arrows[id][w]);
+		delete arrows[id][w];
+	}
+}
+//
+function checkKeyDown(ev) {
+	ev = ev || window.ev;
+	var k = ev.keyCode||ev.which;
+	if(ev.ctrlKey) {
+		if(k==122) { // z key
+			alert('ctrl z');
+			return false;
+		}
+	}
+	window.status = "!"+k+" "+ev.ctrlKey;
+}
+
+</script>

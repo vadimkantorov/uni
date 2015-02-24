@@ -1,0 +1,548 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">False</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ScreenResult.cs" caret="37" fromTop="2" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Forms/f:DigitalInputForm.cs" caret="198" fromTop="10" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:VinController.cs" caret="228" fromTop="9" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PassportController.cs" caret="457" fromTop="20" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:LimitationsController.cs" caret="258" fromTop="9" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:LastNameController.cs" caret="340" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:FirstNameController.cs" caret="346" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ExperienceController.cs" caret="349" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:AgeController.cs" caret="295" fromTop="12" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:StateIdController.cs" caret="234" fromTop="9" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:MiddleNameController.cs" caret="359" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ModelNameController.cs" caret="397" fromTop="17" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/f:App.config" caret="229" fromTop="4" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Forms/f:PrintForm.cs" caret="597" fromTop="26" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ClientService.cs" caret="658" fromTop="16" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:Configuration.cs" caret="145" fromTop="7" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:PriceCalculator.cs" caret="702" fromTop="11" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="266" fromTop="11" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Forms/f:GenericForm.cs" caret="314" fromTop="1" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Forms/f:InsuranceForm.cs" caret="410" fromTop="24" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:VinController.cs" caret="226" fromTop="9" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:StateIdController.cs" caret="234" fromTop="9" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:MiddleNameController.cs" caret="345" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ModelNameController.cs" caret="334" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/f:App.config" caret="204" fromTop="3" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Forms/f:PrintForm.cs" caret="368" fromTop="18" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="788" fromTop="25" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:Configuration.cs" caret="1001" fromTop="21" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:Configuration.cs" caret="1261" fromTop="30" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:Configuration.cs" caret="956" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:Configuration.cs" caret="758" fromTop="7" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="788" fromTop="25" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="576" fromTop="17" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:PriceCalculator.cs" caret="572" fromTop="8" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:Configuration.cs" caret="374" fromTop="16" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:PriceCalculator.cs" caret="1108" fromTop="24" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1652" fromTop="18" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1652" fromTop="27" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1652" fromTop="18" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1652" fromTop="27" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1652" fromTop="12" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1652" fromTop="20" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1652" fromTop="19" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ClientService.cs" caret="543" fromTop="14" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ClientService.cs" caret="727" fromTop="21" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ClientService.cs" caret="144" fromTop="7" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ClientService.cs" caret="1066" fromTop="22" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:ClientService.cs" caret="2042" fromTop="26" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Model/f:PriceCalculator.cs" caret="447" fromTop="15" />
+      <File id="533E8BAA-D625-4EC4-9FCB-AA1FBF6EC6AB/d:Controllers/f:PrintController.cs" caret="1653" fromTop="11" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerMSTest>
+    <UseTestRunConfigFromMetadataFile>False</UseTestRunConfigFromMetadataFile>
+  </UnitTestRunnerMSTest>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="public" priority="56" />
+      <Item value="event" priority="1" />
+      <Item value="KeyPressEventHandler" priority="0" />
+      <Item value="kb" priority="0" />
+      <Item value="new" priority="37" />
+      <Item value="SendKeys" priority="3" />
+      <Item value="e" priority="3" />
+      <Item value="button5" priority="0" />
+      <Item value="List" priority="2" />
+      <Item value="Button" priority="7" />
+      <Item value="List&lt;Button&gt;" priority="0" />
+      <Item value="foreach" priority="2" />
+      <Item value="btn" priority="8" />
+      <Item value="InvokeVirtualKeyPress" priority="0" />
+      <Item value="KeyPressEventArgs" priority="0" />
+      <Item value="object" priority="0" />
+      <Item value="tbText" priority="2" />
+      <Item value="false" priority="5" />
+      <Item value="TabStop" priority="0" />
+      <Item value="Parent" priority="1" />
+      <Item value="ActiveControl" priority="1" />
+      <Item value="var" priority="28" />
+      <Item value="tbNum" priority="1" />
+      <Item value="TextBox" priority="0" />
+      <Item value="control" priority="1" />
+      <Item value="File" priority="0" />
+      <Item value="tmpFile" priority="2" />
+      <Item value="Process" priority="1" />
+      <Item value="Environment" priority="0" />
+      <Item value="Path" priority="0" />
+      <Item value="systemPath" priority="0" />
+      <Item value="printProcess" priority="0" />
+      <Item value="BuildOutputString" priority="0" />
+      <Item value="wb" priority="2" />
+      <Item value="while" priority="3" />
+      <Item value="WebBrowserReadyState" priority="0" />
+      <Item value="Application" priority="5" />
+      <Item value="string" priority="20" />
+      <Item value="res" priority="11" />
+      <Item value="char" priority="5" />
+      <Item value="Enumerable" priority="0" />
+      <Item value="for" priority="3" />
+      <Item value="c" priority="8" />
+      <Item value="abc" priority="4" />
+      <Item value="components" priority="1" />
+      <Item value="int" priority="21" />
+      <Item value="row" priority="2" />
+      <Item value="tbl" priority="17" />
+      <Item value="col" priority="1" />
+      <Item value="digs" priority="0" />
+      <Item value="alphas" priority="3" />
+      <Item value="if" priority="23" />
+      <Item value="ind" priority="0" />
+      <Item value="DockStyle.Fill" priority="0" />
+      <Item value="return" priority="58" />
+      <Item value="ConstructButton" priority="2" />
+      <Item value="Tag" priority="0" />
+      <Item value="text" priority="1" />
+      <Item value="Text" priority="1" />
+      <Item value="ConstructButtonWithAnotherText" priority="2" />
+      <Item value="spaceBtn" priority="0" />
+      <Item value="x" priority="0" />
+      <Item value="ConstructSpaceButton" priority="0" />
+      <Item value="Font" priority="2" />
+      <Item value="const" priority="0" />
+      <Item value="StrongTypingException" priority="0" />
+      <Item value="backSpaceBtn" priority="3" />
+      <Item value="PersonalDetails" priority="2" />
+      <Item value="class" priority="4" />
+      <Item value="bool" priority="7" />
+      <Item value="Insurance" priority="0" />
+      <Item value="DateTimeKind" priority="0" />
+      <Item value="IController" priority="4" />
+      <Item value="interface" priority="1" />
+      <Item value="Form1" priority="0" />
+      <Item value="void" priority="9" />
+      <Item value="InsuranceInfo" priority="11" />
+      <Item value="Context" priority="1" />
+      <Item value="current" priority="11" />
+      <Item value="firstScreen" priority="3" />
+      <Item value="Reset" priority="3" />
+      <Item value="MoveOn" priority="0" />
+      <Item value="next" priority="1" />
+      <Item value="info" priority="32" />
+      <Item value="null" priority="8" />
+      <Item value="else" priority="4" />
+      <Item value="protected" priority="4" />
+      <Item value="abstract" priority="9" />
+      <Item value="Form" priority="4" />
+      <Item value="GetNewForm" priority="0" />
+      <Item value="form" priority="19" />
+      <Item value="override" priority="17" />
+      <Item value="AcceptButton" priority="6" />
+      <Item value="o" priority="1" />
+      <Item value="parent" priority="1" />
+      <Item value="is" priority="0" />
+      <Item value="cur" priority="0" />
+      <Item value="GetAutoScaleSize" priority="0" />
+      <Item value="WasCanceled" priority="1" />
+      <Item value="true" priority="4" />
+      <Item value="InsuranceForm" priority="6" />
+      <Item value="Controller" priority="15" />
+      <Item value="typeof" priority="17" />
+      <Item value="where" priority="0" />
+      <Item value="TForm" priority="5" />
+      <Item value="CancelButton" priority="0" />
+      <Item value="tbSecondName" priority="1" />
+      <Item value="LimitationsForm" priority="0" />
+      <Item value="WithLimitations" priority="3" />
+      <Item value="btnProceed" priority="1" />
+      <Item value="LimitationsScreen" priority="1" />
+      <Item value="HorsePowerScreen" priority="0" />
+      <Item value="SecondNameForm" priority="0" />
+      <Item value="InitializeComponent" priority="0" />
+      <Item value="private" priority="1" />
+      <Item value="CarDetails" priority="1" />
+      <Item value="InsuranceDetails" priority="2" />
+      <Item value="FirstNameScreen" priority="0" />
+      <Item value="Close" priority="1" />
+      <Item value="DialogResult" priority="3" />
+      <Item value="DialogResult.OK" priority="2" />
+      <Item value="Exit" priority="1" />
+      <Item value="DialogResult.Cancel" priority="2" />
+      <Item value="lblTitle" priority="1" />
+      <Item value="value" priority="1" />
+      <Item value="this" priority="2" />
+      <Item value="KeyboardType" priority="4" />
+      <Item value="RussianKeyboard" priority="0" />
+      <Item value="pnKeyboard" priority="1" />
+      <Item value="Activator" priority="0" />
+      <Item value="keyboardType" priority="0" />
+      <Item value="Title" priority="2" />
+      <Item value="sender" priority="0" />
+      <Item value="keyboard" priority="1" />
+      <Item value="tbMasked" priority="7" />
+      <Item value="CreateNewForm" priority="0" />
+      <Item value="GenericForm" priority="1" />
+      <Item value="Mask" priority="1" />
+      <Item value="Action" priority="0" />
+      <Item value="ConfigureForm" priority="0" />
+      <Item value="virtual" priority="0" />
+      <Item value="f" priority="17" />
+      <Item value="MiddleNameController" priority="0" />
+      <Item value="LastNameController" priority="0" />
+      <Item value="DigitalInputForm" priority="2" />
+      <Item value="CloseReason.UserClosing" priority="0" />
+      <Item value="DialogResult.Abort" priority="0" />
+      <Item value="break" priority="2" />
+      <Item value="FirstNameController" priority="0" />
+      <Item value="VinController" priority="1" />
+      <Item value="StateIdController" priority="0" />
+      <Item value="PassportController" priority="0" />
+      <Item value="AgeController" priority="0" />
+      <Item value="HorsePowerController" priority="1" />
+      <Item value="ExperienceController" priority="0" />
+      <Item value="LimitationsController" priority="0" />
+      <Item value="GetChildAtPointSkip" priority="0" />
+      <Item value="ScreenResult" priority="3" />
+      <Item value="switch" priority="0" />
+      <Item value="case" priority="2" />
+      <Item value="ScreenResult.Cancel" priority="0" />
+      <Item value="ScreenResult.Close" priority="0" />
+      <Item value="CanProceed" priority="0" />
+      <Item value="Cancel" priority="1" />
+      <Item value="Proceed" priority="1" />
+      <Item value="PrintController" priority="0" />
+      <Item value="WebBrowser" priority="0" />
+      <Item value="browser" priority="3" />
+      <Item value="Document" priority="0" />
+      <Item value="DocumentText" priority="0" />
+      <Item value="s" priority="0" />
+      <Item value="PrintControllerWithStatusDialog" priority="0" />
+      <Item value="PrintHtmlString" priority="0" />
+      <Item value="FormatHtml" priority="2" />
+      <Item value="PrintForm" priority="0" />
+      <Item value="base" priority="0" />
+      <Item value="Dictionary" priority="1" />
+      <Item value="ReadBasePrices" priority="0" />
+      <Item value="CalcualateBasePrice" priority="0" />
+      <Item value="basePrices" priority="0" />
+      <Item value="kvp" priority="1" />
+      <Item value="Configuration" priority="9" />
+      <Item value="cfg" priority="5" />
+      <Item value="percent" priority="3" />
+      <Item value="basePrice" priority="0" />
+      <Item value="SortedDictionary" priority="0" />
+      <Item value="using" priority="6" />
+      <Item value="dcs" priority="0" />
+      <Item value="FileStyleUriParser" priority="0" />
+      <Item value="FileMode.Open" priority="0" />
+      <Item value="BasePrices" priority="0" />
+      <Item value="Dictionary&lt;int,int&gt;" priority="0" />
+      <Item value="WithoutLimitationsPercent" priority="0" />
+      <Item value="AgePercent" priority="0" />
+      <Item value="ExportOptions" priority="0" />
+      <Item value="configPath" priority="0" />
+      <Item value="try" priority="0" />
+      <Item value="id" priority="0" />
+      <Item value="getter" priority="0" />
+      <Item value="FormatField" priority="2" />
+      <Item value="PriceCalculator" priority="1" />
+      <Item value="lastActiveControl" priority="0" />
+      <Item value="ModelNameController" priority="0" />
+      <Item value="ClientService" priority="0" />
+      <Item value="clientService" priority="2" />
+      <Item value="service" priority="0" />
+      <Item value="SqlConnection" priority="1" />
+      <Item value="OpenConnection" priority="0" />
+      <Item value="conn" priority="2" />
+      <Item value="Exists" priority="0" />
+      <Item value="cmd" priority="8" />
+      <Item value="cmdText" priority="2" />
+      <Item value="reader" priority="1" />
+      <Item value="Crashed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Keyboard">
+      <Item value="VirtualKeyPress" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.SendKeys">
+      <Item value="Send" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.KeyPressEventArgs">
+      <Item value="KeyChar" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Char">
+      <Item value="ToString" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Button">
+      <Item value="Click" priority="3" />
+      <Item value="Text" priority="4" />
+      <Item value="TabStop" priority="0" />
+      <Item value="Dock" priority="0" />
+      <Item value="Font" priority="3" />
+      <Item value="Visible" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Focus" priority="0" />
+      <Item value="TextAlignChanged" priority="0" />
+      <Item value="Text" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Control">
+      <Item value="Focus" priority="0" />
+      <Item value="Enter" priority="0" />
+      <Item value="Visible" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="AddRange" priority="1" />
+      <Item value="Add" priority="2" />
+      <Item value="Insert" priority="0" />
+      <Item value="Union" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="GetTempFileName" priority="1" />
+      <Item value="Combine" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="WriteAllText" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="NewLine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.MaskedTextBox">
+      <Item value="AcceptsTab" priority="0" />
+      <Item value="Text" priority="2" />
+      <Item value="Mask" priority="2" />
+      <Item value="MaskCompleted" priority="0" />
+      <Item value="Focus" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Diagnostics.Process">
+      <Item value="StandardError" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.WebBrowser">
+      <Item value="DocumentText" priority="0" />
+      <Item value="Print" priority="1" />
+      <Item value="ReadyState" priority="0" />
+      <Item value="DocumentCompleted" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.WebBrowserReadyState">
+      <Item value="Complete" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.Application">
+      <Item value="DoEvents" priority="0" />
+      <Item value="Run" priority="1" />
+      <Item value="Exit" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TableLayoutPanel">
+      <Item value="RowCount" priority="3" />
+      <Item value="ColumnCount" priority="4" />
+      <Item value="ControlRemoved" priority="0" />
+      <Item value="Controls" priority="4" />
+      <Item value="SetColumnSpan" priority="2" />
+      <Item value="SetRowSpan" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TableLayoutControlCollection">
+      <Item value="Add" priority="3" />
+      <Item value="Cast" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList" priority="1" />
+      <Item value="Reverse" priority="1" />
+      <Item value="Skip" priority="1" />
+      <Item value="Where" priority="0" />
+      <Item value="Single" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Drawing.Font">
+      <Item value="Size" priority="1" />
+      <Item value="FontFamily" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.IController">
+      <Item value="Equals" priority="0" />
+      <Item value="GetForm" priority="0" />
+      <Item value="FillIn" priority="0" />
+      <Item value="GetNext" priority="1" />
+      <Item value="Result" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Form">
+      <Item value="Show" priority="0" />
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Activator">
+      <Item value="CreateInstance" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.InsuranceForm">
+      <Item value="WasCanceled" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.InsuranceInfo">
+      <Item value="PersonalDetails" priority="12" />
+      <Item value="InsuranceDetails" priority="2" />
+      <Item value="CarDetails" priority="12" />
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.PersonalDetails">
+      <Item value="SecondName" priority="1" />
+      <Item value="FirstName" priority="3" />
+      <Item value="MiddleName" priority="0" />
+      <Item value="Experience" priority="1" />
+      <Item value="Age" priority="1" />
+      <Item value="LastName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.InsuranceDetails">
+      <Item value="WithLimitations" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Screens.LimitationsForm">
+      <Item value="WithLimitations" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.IButtonControl">
+      <Item value="PerformClick" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.CarDetails">
+      <Item value="HorsePower" priority="3" />
+      <Item value="ModelName" priority="2" />
+      <Item value="VIN" priority="0" />
+      <Item value="StateId" priority="2" />
+      <Item value="Passport" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Context">
+      <Item value="Start" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Label">
+      <Item value="Text" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Panel">
+      <Item value="Controls" priority="0" />
+      <Item value="SendToBack" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Control+ControlCollection">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Controllers.GenericForm">
+      <Item value="Show" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:TForm">
+      <Item value="DialogResult" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.DialogResult">
+      <Item value="OK" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.IVirtualKeyboard">
+      <Item value="VirtualKeyPress" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Forms.GenericForm">
+      <Item value="Input" priority="4" />
+      <Item value="Title" priority="7" />
+      <Item value="Text" priority="1" />
+      <Item value="Mask" priority="2" />
+      <Item value="TextInput" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Forms.DigitalInputForm">
+      <Item value="IntegerInput" priority="2" />
+      <Item value="Top" priority="0" />
+      <Item value="Title" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.FormClosingEventArgs">
+      <Item value="CloseReason" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Forms.LimitationsForm">
+      <Item value="TabIndex" priority="0" />
+      <Item value="WithLimitations" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Insurance.ScreenResult">
+      <Item value="Proceed" priority="0" />
+      <Item value="Cancel" priority="0" />
+      <Item value="Close" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Controllers.PrintController">
+      <Item value="PrintReceipt" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Forms.PrintForm">
+      <Item value="Title" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.KeyValuePair`2">
+      <Item value="Key" priority="0" />
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Insurance.Configuration">
+      <Item value="Read" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.Configuration">
+      <Item value="BasePrices" priority="0" />
+      <Item value="WithoutLimitationsPercent" priority="0" />
+      <Item value="AgePercent" priority="0" />
+      <Item value="ExperiencePercent" priority="0" />
+      <Item value="Save" priority="0" />
+      <Item value="WithoutCrashesPercent" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Ceiling" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Runtime.Serialization.DataContractSerializer">
+      <Item value="ReadObject" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Format" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Insurance.PriceCalculator">
+      <Item value="Calculate" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Replace" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
+      <Item value="ConnectionStrings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Configuration.ConnectionStringSettings">
+      <Item value="ConnectionString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlConnection">
+      <Item value="Open" priority="0" />
+      <Item value="CreateCommand" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlCommand">
+      <Item value="ExecuteNonQuery" priority="0" />
+      <Item value="CommandText" priority="1" />
+      <Item value="Parameters" priority="5" />
+      <Item value="ExecuteScalar" priority="0" />
+      <Item value="ExecuteReader" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlParameterCollection">
+      <Item value="AddWithValue" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.SqlClient.SqlDataReader">
+      <Item value="Read" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

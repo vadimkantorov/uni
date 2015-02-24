@@ -1,0 +1,147 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Кодирование по Хэммингу</title>
+	</head>
+	<body>
+		<script language="javascript" type="text/javascript">
+		
+		Array.prototype.ToString = function()
+		{
+			var res = "";
+			for(var i = 0; i < this.length; i++)
+				res += this[i];
+			return res;
+		}
+		
+		String.prototype.Reverse = function()
+		{
+			var res = "";
+			for(var i = this.length-1; i >= 0; i--)
+				res += this.charAt(i);
+			return res;
+		}
+		
+		function PrintEncoded(str)
+		{
+			document.getElementById("encoded").value = str;
+		}
+		
+		function PrintDecoded(str, errorChar)
+		{
+			var decoded = document.getElementById("decoded");
+			
+			decoded.innerHTML = "";
+			if(errorChar == null)
+			{
+				var tspan = document.createElement("span");
+				tspan.style.color = "Green";
+				tspan.innerText = str;
+				decoded.appendChild(tspan);
+			}
+			else
+			{
+				var tspan = document.createElement("span");
+				tspan.style.color = "green";
+				tspan.innerText = str.substring(0,errorChar-1+1);
+				decoded.appendChild(tspan);
+				
+				tspan = document.createElement("span");
+				tspan.style.color = "red";
+				tspan.innerText = str.charAt(errorChar);
+				decoded.appendChild(tspan);
+				
+				tspan = document.createElement("span");
+				tspan.style.color = "green";
+				tspan.innerText = str.substr(errorChar+1);
+				decoded.appendChild(tspan);
+			}
+		}
+		
+		function Encode(original)
+		{
+			var res = new Array();
+			var xorred = 0;
+			for(var i = 1, j = original.length-1; j >= 0; i++)
+			{
+				if((i & (i-1)) == 0)
+					continue;
+				res[i-1] = original.charAt(j--);
+				if(res[i-1] == '1')
+					xorred ^= i;
+			}
+			
+			for(var i = 1; i <= res.length; i *= 2)
+			{
+				res[i-1] = "" + xorred%2;
+				xorred >>= 1;
+			}
+			
+			res.reverse();
+			PrintEncoded(res.ToString());
+		}
+		
+		function Decode(encoded)
+		{
+			var xorred = 0, decoded = "";
+			for(var i = encoded.length-1; i >= 0; i--)
+			{
+				var pos = encoded.length - i;
+				if(encoded.charAt(i) == '1')
+					xorred ^= pos;
+				if((pos & (pos-1)) == 0)
+						continue;
+				decoded += encoded.charAt(i);
+			}
+			
+			decoded = decoded.Reverse();
+			
+			if(xorred == 0)
+				PrintDecoded(decoded);
+			else
+			{
+				if((xorred & (xorred-1)) == 0)
+				{
+					PrintDecoded(decoded);
+					
+					var tspan = document.createElement("span");
+					tspan.style.color = "red";
+					tspan.innerText = " Ошибка в контрольном бите " + (encoded.length - (xorred-1));
+					document.getElementById("decoded").appendChild(tspan);
+				}
+				else
+				{
+					//debugger;
+					var toFlip = xorred;
+					
+					var tmp = toFlip, cnt = 0;
+					while(tmp != 0)
+					{
+						cnt++;
+						tmp >>= 1;
+					}
+					
+					toFlip -= cnt;
+					
+					PrintDecoded(decoded,decoded.length - toFlip);
+				}
+			}
+		}
+		</script>
+		<table>
+			<tr>
+				<td>Исходное сообщение:</td>
+				<td><input id="original" /></td>
+				<td><input type="button" value="Закодировать" onclick='Encode(document.getElementById("original").value)' /></td>
+			</tr>
+			<tr>
+				<td>Закодированное сообщение:</td>
+				<td><input id="encoded" /></td>
+				<td><input type="button" value="Раскодировать" onclick='Decode(document.getElementById("encoded").value)' /></td>
+			</tr>
+			<tr>
+				<td>Раскодированное сообщение:</td>
+				<td colspan="2"><div id="decoded"></div></td>
+			</tr>
+		</table>
+	</body>
+</html>

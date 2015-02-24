@@ -1,0 +1,1683 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DCIMAP.GANS.SwarmIntellect</name>
+    </assembly>
+    <members>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.GraphObjectMounter`1">
+            <summary>
+            Class for mounting <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> to the <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1"/>.
+            </summary>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ObjectMounter`3">
+            <summary>
+            Class for mounting <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> to the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectComponent`3">
+            <summary>
+            A component of swarm intellect.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SwarmIntellectComponent`3.Map">
+            <summary>
+            Gets an algorithm of component.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ObjectMounter`3.AddObjectAnywear(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2},DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <summary>
+            Appends <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> to <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ObjectMounter`3.AddObjectsAnywear(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2},DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2}[])">
+            <summary>
+            Appends array of <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> to <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphObjectMounter`1.random">
+            <summary>
+            <see cref="T:System.Random"/> for internal use.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphObjectMounter`1.AddObjectAnywear(DCIMAP.GANS.SwarmIntellect.Map{DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphMetric,`0},DCIMAP.GANS.SwarmIntellect.IObject{DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphMetric,`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Metric2D">
+            <summary>
+            Represents <see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> in N^2 space.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.IMetric`1">
+            <summary>
+            Marker for class which represents metric in space which coordinates is <typeparam name="C"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.IMetric`1.Distance(`0,`0)">
+            <summary>
+            Find distance between <paramref name="first"/> and <paramref name="second"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Metric2D.DX">
+            <summary>
+            The distance along the axis X.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Metric2D.DY">
+            <summary>
+            The distance along the axis Y.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Metric2D.Equals(DCIMAP.GANS.SwarmIntellect.IMetric{DCIMAP.GANS.SwarmIntellect.Coordinate2D})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Metric2D.Distance(DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Coordinate2D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Metric2D.#ctor(System.Int32,System.Int32)">
+            <param name="dx">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Metric2D.DX"/>.</param>
+            <param name="dy">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Metric2D.DY"/>.</param>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ITurnable">
+            <summary>
+            Interface for internal usage (to wrap code with generics in code without it).
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ITurnable.MakeTurn">
+            <summary>
+            Just make one iteration of alghorithm.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ListEther">
+            <summary>
+            Primitive but common using realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.Ether"/>.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Ether">
+            <summary>
+            Class for communication between <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>.
+            Provides functionality of temporary and untemporary messages.
+            Temporary are cleaned up every turn, and all new temporary messages are accessible only after removal of old.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Ether.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Ether.AddMessage(System.Object)">
+            <summary>
+            Add new temporary message available for enumeration.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Ether.AddMessage(System.String,System.Object,System.Boolean)">
+            <summary>
+            Add new named message.
+            </summary>
+            <param name="isTemporary">Shows if this message is temporary.</param>
+            <param name="name">Name of new message.</param>
+            <param name="message">Message to add to ether.</param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Ether.RemoveMessage(System.String)">
+            <summary>
+            Removes named message.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Ether.Get``1(System.String)">
+            <summary>
+            Gets typified named message.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Ether.Clean">
+            <summary>
+            Remove all temporary message.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Ether.Item(System.String)">
+            <summary>
+            Gets or sets named message. All new messages are marked as nontemporary.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListEther.statMsgs">
+            <summary>
+            Nontemporary named messages.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListEther.curList">
+            <summary>
+            Temporary non-named messages from previous turn.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListEther.nextList">
+            <summary>
+            Temporary non-named messages from this turn.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListEther.nextMsgs">
+            <summary>
+            Temporary named messages from this turn.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListEther.tmpMsgs">
+            <summary>
+            Temporary named messages from previous turn.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListEther.AddMessage(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListEther.AddMessage(System.String,System.Object,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListEther.RemoveMessage(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListEther.Clean">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListEther.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.ListEther.Item(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Coordinate3D">
+            <summary>
+            Represents <see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> in N^3 space.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ICoordinate">
+            <summary>
+            Marker for class which represents <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> coordinates in space.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Coordinate3D.X">
+            <summary>
+            X coordinate.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Coordinate3D.Y">
+            <summary>
+            Y coordinate.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Coordinate3D.Z">
+            <summary>
+            Z coordinate.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Coordinate3D.Equals(DCIMAP.GANS.SwarmIntellect.ICoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Coordinate3D.#ctor(System.Int32,System.Int32,System.Int32)">
+            <param name="x">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Coordinate3D.X"/>.</param>
+            <param name="y">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Coordinate3D.Y"/>.</param>
+            <param name="z">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Coordinate3D.Z"/>.</param>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SubMap`3">
+            <summary>
+            Part of the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2},`0,`1)">
+            <param name="map">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Map"/>.</param>
+            <param name="center">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Center"/>.</param>
+            <param name="radius">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Radius"/>.</param>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SubMap`3.background">
+            <summary>
+            <see cref="F:DCIMAP.GANS.SwarmIntellect.SubMap`3.map"/>'s <see cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Background"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SubMap`3.map">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Map"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SubMap`3.center">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Center"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SubMap`3.radius">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Radius"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.GetCell(`0)">
+            <summary>
+            Get <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> by it's local coordinate.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.Cell{`0,`1,`2},`0})">
+            <summary>
+            Execute <paramref name="action"/> foreach <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.
+            </summary>
+            <param name="action">Delegate that gets <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> and it's coordinate <typeparamref name="C"/>.</param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.GetBackground(`0)">
+            <summary>
+            Get background info for specified location.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.Add(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc cref="M:DCIMAP.GANS.SwarmIntellect.Map`3.Add(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.Remove(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc cref="M:DCIMAP.GANS.SwarmIntellect.Map`3.Remove(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.Move(`0,`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc cref="M:DCIMAP.GANS.SwarmIntellect.Map`3.Move(`0,`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.ToLocal(`0)">
+            <summary>
+            Convert global coordinates to local.
+            </summary>
+            <exception cref="T:System.IndexOutOfRangeException"><param name="globalCoordinate"/> isn't in this <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/>.</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.ToGlobal(`0)">
+            <summary>
+            Convert local coordinates to global.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.ContainsCell(DCIMAP.GANS.SwarmIntellect.Cell{`0,`1,`2})">
+            <summary>
+            Checks if <paramref name="cell"/> is in this <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMap`3.ContainsCoordinates(`0)">
+            <summary>
+            Checks if <paramref name="coordinate"/> is in this <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Map">
+            <summary>
+            The owner <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Radius">
+            <summary>
+            The radius of <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Center">
+            <summary>
+            The <see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> of <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/>'s center.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Cells">
+            <summary>
+            Get <see cref="T:System.Collections.Generic.IEnumerable`1"/> over <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s in this <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SubMap`3.Objects">
+            <summary>
+            Get <see cref="T:System.Collections.Generic.IEnumerable`1"/> over <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>s in this <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/>.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectHandler">
+            <summary>
+            Handler for swarm algorithms
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectHandler.MakeIteration">
+            <inheridoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectHandler.GetIterationLine(DCIMAP.GANS.Basic.LearningIterationInfo)">
+            <inheridoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SwarmIntellectHandler.Algorithm">
+            <summary>
+            Gets an algorithm of component.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Metric3D">
+            <summary>
+            Represents <see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> in N^3 space.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Metric3D.DX">
+            <summary>
+            The distance along the axis X.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Metric3D.DY">
+            <summary>
+            The distance along the axis Y.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Metric3D.DZ">
+            <summary>
+            The distance along the axis Z.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Metric3D.Equals(DCIMAP.GANS.SwarmIntellect.IMetric{DCIMAP.GANS.SwarmIntellect.Coordinate3D})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Metric3D.Distance(DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Coordinate3D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Metric3D.#ctor(System.Int32,System.Int32,System.Int32)">
+            <param name="dx">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Metric3D.DX"/>.</param>
+            <param name="dy">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Metric3D.DY"/>.</param>
+            <param name="dz">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Metric3D.DZ"/>.</param>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisor">
+            <summary>
+            <see cref="T:DCIMAP.GANS.Basic.LearningSupervisor"/> for <see cref="N:DCIMAP.GANS.SwarmIntellect"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisor.MonitorIteration(DCIMAP.GANS.Basic.LearningIterationInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisor.GetSupervisorInfo">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.GraphMetric">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> for <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMetric.Steps">
+            <summary>
+            Steps between two nodes in graph.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMetric.#ctor(System.Int32)">
+            <param name="steps">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.GraphMetric.Steps"/>.</param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMetric.Equals(DCIMAP.GANS.SwarmIntellect.IMetric{DCIMAP.GANS.SwarmIntellect.GraphCoordinate})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMetric.Distance(DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphCoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.CellEmpty`3">
+            <summary>
+            Decorator used instead of empty <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Cell`3">
+            <summary>
+            Cell in the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2},`0)">
+            <param name="map">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Map"/>.</param>
+            <param name="coordinate">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Coordinate"/>.</param>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Cell`3.map">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Map"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Cell`3.background">
+            <summary>
+            <see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Map"/>'s <see cref="T:DCIMAP.GANS.SwarmIntellect.Background`2"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Cell`3.coordinate">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Coordinate"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})">
+            <summary>
+            Execute <paramref name="action"/> foreach <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> in this cell.
+            </summary>
+            <param name="action">Delegate that gets <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> and it's coordinate <typeparamref name="C"/>.</param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.Add(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <summary>
+            Add <paramref name="usedObject"/> to this cell.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.Remove(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <summary>
+            Remove <paramref name="usedObject"/> from this cell.
+            </summary>
+            <exception cref="T:System.ArgumentException"><paramref name="usedObject"/> not found in this cell.</exception>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Cell`3.objects">
+            <summary>
+            All <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>s stored in this <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.
+            Used for (de)serialization.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.OnSerialize">
+            <summary>
+            Invoked before serialization. Used to update <see cref="F:DCIMAP.GANS.SwarmIntellect.Cell`3.objects"/> array.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Cell`3.OnDeserialized">
+            <summary>
+            Invoked after deserialization.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Map">
+            <summary>
+            The owner <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Coordinate">
+            <summary>
+            The <see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> of this cell in space.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Background">
+            <summary>
+            Background of this <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Ether">
+            <summary>
+            The <see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Map"/>'s <see cref="T:DCIMAP.GANS.SwarmIntellect.Ether"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Turn">
+            <summary>
+            The delegate for calling <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.BeforeTurn"/> and <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Turn"/> delegates.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.ApplyTurnEffect">
+            <summary>
+            The delegate called after <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Turn"/> but before <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.AfterTurn"/> delegates.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.AfterTurn">
+            <summary>
+            The delegate for calling <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.AfterTurn"/> delegates.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Cell`3.IsUseless">
+            <summary>
+            The delegate for getting value indicating if <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> is empty and may be delleted.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.Update(`0)">
+            <summary>
+            Move <see cref="T:DCIMAP.GANS.SwarmIntellect.CellEmpty`3"/> to new place.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.Add(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.Remove(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.Turn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.ApplyTurnEffect">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.AfterTurn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.CellEmpty`3.IsUseless">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ImageBackground">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.Background`2"/> for Image.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Background`2">
+            <summary>
+            Class that represents background of <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>'s space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Background`2.GetPoint(`0)">
+            <summary>
+            Gets background info for point with specified coordinates.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Background`2.Draw(System.Drawing.Graphics)">
+            <summary>
+            Draws this object on the <paramref name="where"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ImageBackground.bmp">
+            <summary>
+            <see cref="T:System.Drawing.Bitmap"/> with content.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ImageBackground.ubmp">
+            <summary>
+            <see cref="T:DCIMAP.GANS.Basic.FastBitmap"/> providing fast access to <see cref="F:DCIMAP.GANS.SwarmIntellect.ImageBackground.bmp"/>'s data.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ImageBackground.#ctor(DCIMAP.GANS.Basic.FastBitmap)">
+            <inheritdoc/>
+            <param name="ubmp">Content.</param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ImageBackground.GetPoint(DCIMAP.GANS.SwarmIntellect.Coordinate2D)">
+            <inheridoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ImageBackground.Draw(System.Drawing.Graphics)">
+            <inheridoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SwarmLearningInfo">
+            <summary>
+            <see cref="T:DCIMAP.GANS.Basic.LearningIterationInfo"/> for <see cref="N:DCIMAP.GANS.SwarmIntellect"/>.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectDriver">
+            <summary>
+            <see cref="T:DCIMAP.GANS.Basic.LearningDriver"/> for <see cref="N:DCIMAP.GANS.SwarmIntellect"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectDriver.#ctor(System.Drawing.Size)">
+            <inheritdoc/>
+            <param name="size"><see cref="T:System.Drawing.Size"/> of for for <see cref="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisor"/>'s pannel.</param>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SwarmIntellectDriver.SupervisorPanel">
+            <summary>
+            Gets an output panel
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Map3D`1">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3"/> for N^3 space.
+            </summary>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/> with direct access to the <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Map`3">
+            <summary>
+            Representation of the space.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.#ctor(DCIMAP.GANS.SwarmIntellect.Ether,DCIMAP.GANS.SwarmIntellect.Background{`0,`2},`1)">
+            <param name="ether">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Ether"/>.</param>
+            <param name="background">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Background"/>.</param>
+            <param name="size">Value of <see cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size"/>.</param>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map`3.cleanupFrequency">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.CleanupFrequency"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map`3.cleanupPause">
+            <summary>
+            Timeout since last cleanup.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map`3.useGC">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.UseGC"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.CollectGarbage">
+            <summary>
+            Run internal GC.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map`3.background">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Background"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map`3.ether">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Ether"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map`3.size">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.Add(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <summary>
+            Add <paramref name="usedObject"/> to <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> with coordinates <paramref name="coordinate"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.Remove(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <summary>
+            Remove <paramref name="usedObject"/> from <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> with coordinates <paramref name="coordinate"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.Move(`0,`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <summary>
+            Move <paramref name="usedObject"/> from <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> with coordinates <paramref name="from"/>
+            to <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> with coordinates <paramref name="to"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.MakeTurn">
+            <summary>
+            Make one turn.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.GetSubMap(`0,`1)">
+            <summary>
+            Gets <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/> by it's <paramref name="center"/> and <paramref name="radius"/>.
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">Region is out of space's border.</exception>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})">
+            <summary>
+            Execute <paramref name="action"/> foreach <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> in <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.
+            </summary>
+            <param name="action">Delegate that gets <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> and it's coordinate <typeparamref name="C"/>.</param>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map`3.cells">
+            <summary>
+            All <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s stored in this <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            Used for (de)serialization.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.PrepareToSave">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.OnSerialize">
+            <summary>
+            Invoked before serialization. Used to update <see cref="F:DCIMAP.GANS.SwarmIntellect.Map`3.cells"/> array.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map`3.OnDeserialized">
+            <summary>
+            Invoked after deserialization.
+            Do not forget in overriders to invoke parent's method first.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map`3.UseGC">
+            <summary>
+            The value indicating if it nessesary to launch internal Garbage Collector.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map`3.CleanupFrequency">
+            <summary>
+            The frequency of launching of internal Garbage Collector.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map`3.Ether">
+            <summary>
+            The <see cref="T:DCIMAP.GANS.SwarmIntellect.Ether"/> for <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>s in this <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map`3.Background">
+            <summary>
+            The <see cref="T:DCIMAP.GANS.SwarmIntellect.Background`2"/> of this <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size">
+            <summary>
+            Size of this <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.SwarmIntellect.Map`3.BeforeTurn">
+            <summary>
+            Raised before any actions in this turn.
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.SwarmIntellect.Map`3.Turn">
+            <summary>
+            Raised special for <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Turn"/>.
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.SwarmIntellect.Map`3.ApplyTurnEffect">
+            <summary>
+            Raised for applying <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>'s synchronous action effect.
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.SwarmIntellect.Map`3.AfterTurn">
+            <summary>
+            Raised spesial for <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.AfterTurn"/>.
+            </summary>
+        </member>
+        <member name="E:DCIMAP.GANS.SwarmIntellect.Map`3.AfterCleanup">
+            <summary>
+            Raised after all actions in this turn.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map`3.Cells">
+            <summary>
+            Get <see cref="T:System.Collections.Generic.IEnumerable`1"/> over <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s in this <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map`3.Objects">
+            <summary>
+            Get <see cref="T:System.Collections.Generic.IEnumerable`1"/> over <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>s in this <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3.#ctor(DCIMAP.GANS.SwarmIntellect.Ether,DCIMAP.GANS.SwarmIntellect.Background{`0,`2},`1)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3.GetCell(`0,System.Boolean)">
+            <summary>
+            Gets <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> by it's <paramref name="coordinate"/> in map.
+            </summary>
+            <param name="createNew">
+            Indicates if it nessesary to create new full functional <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>
+            if it isn't any on this <paramref name="coordinate"/> or just use decorator
+            </param>
+            <param name="coordinate">Point in the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/></param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3.Add(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3.Remove(`0,DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.cellConstructor">
+            <summary>
+            Delegate for constructing <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.substrate">
+            <summary>
+            Contect of the points in <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.xSize">
+            <nheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.ySize">
+            <nheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.zSize">
+            <nheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.#ctor(System.Int32,System.Int32,System.Int32,System.Func{DCIMAP.GANS.SwarmIntellect.Map3D{`0},DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Cell{DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Metric3D,`0}},DCIMAP.GANS.SwarmIntellect.Background{DCIMAP.GANS.SwarmIntellect.Coordinate3D,`0},DCIMAP.GANS.SwarmIntellect.Ether)">
+            <inheritdoc/>
+            <param name="xSize">Size of <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/> in X dimension.</param>
+            <param name="ySize">Size of <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/> in Y dimension.</param>
+            <param name="zSize">Size of <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/> in Z dimension.</param>
+            <param name="cellConstructor">Delegate for constructing <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.</param>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.activeDecorator">
+            <summary>
+            Decorator of this map.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.delegates">
+            <summary>
+            For optimization. Emulating events and delegates.
+            One record foreach <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> in <see cref="T:DCIMAP.GANS.SwarmIntellect.Map3D`1"/>
+            <see cref="F:System.Tuple`5.V1"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Turn"/>,
+            <see cref="F:System.Tuple`5.V2"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.ApplyTurnEffect"/>,
+            <see cref="F:System.Tuple`5.V3"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.AfterTurn"/>,
+            <see cref="F:System.Tuple`5.V4"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.IsUseless"/>,
+            <see cref="F:System.Tuple`5.V5"/>=<see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.CollectGarbage">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.GetSubMap(DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Metric3D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Metric3D,`0},DCIMAP.GANS.SwarmIntellect.Coordinate3D})">
+            <inheritdoc/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.cellEmpty">
+            <summary>
+            Decorator for <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s in empty points (in fact <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s for this point does not stored).
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.GetCell(DCIMAP.GANS.SwarmIntellect.Coordinate3D,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.OnSerialize">
+            <inheridoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.OnDeserialized">
+            <inheridoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map3D`1.Cells">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMapDecorator`3"/> for N^3 space. For internal use only.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SubMapDecorator`3">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/> that is used like decorator of whole <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SubMapDecorator`3.map">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMapDecorator`3.#ctor(DCIMAP.GANS.SwarmIntellect.MapDirectAccess{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMapDecorator`3.GetCell(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SubMapDecorator`3.Update(`0,`1)">
+            <summary>
+            Move decorator to new place.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.substrate">
+            <summary>
+            Reference to <see cref="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.substrate"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.xSize">
+            <summary>
+            Simmilar to <see cref="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.xSize"/>
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.ySize">
+            <summary>
+            Simmilar to <see cref="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.ySize"/>
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.zSize">
+            <summary>
+            Simmilar to <see cref="F:DCIMAP.GANS.SwarmIntellect.Map3D`1.zSize"/>
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.#ctor(DCIMAP.GANS.SwarmIntellect.Map3D{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.ToLocal(DCIMAP.GANS.SwarmIntellect.Coordinate3D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.ToGlobal(DCIMAP.GANS.SwarmIntellect.Coordinate3D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.ContainsCoordinates(DCIMAP.GANS.SwarmIntellect.Coordinate3D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.Cell{DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Metric3D,`0},DCIMAP.GANS.SwarmIntellect.Coordinate3D})">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map3D`1.SubMapDecorator3D.Cells">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.StateChangeInfo">
+            <summary>
+            Enum that represents <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> state change
+            after <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.AfterTurn"/> occurs.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.StateChangeInfo.None">
+            <summary>
+            Nothing to change.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.StateChangeInfo.Update">
+            <summary>
+            Update using delegates.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.StateChangeInfo.Die">
+            <summary>
+            Object dies, so remove it.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.IObject`3">
+            <summary>
+            Object that can be stored in the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Map">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/> of the <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>'s world.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Eyeshot">
+            <summary>
+            Radius of field of vision.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.IObject`3.BeforeTurn">
+            <summary>
+            Delegate which calls before turn is started.
+            </summary>
+            <remarks>
+            null if none.
+            </remarks>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Turn">
+            <summary>
+            Delegate which calls when turn occurs.
+            </summary>
+            <remarks>
+            null if none.
+            </remarks>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.IObject`3.AfterTurn">
+            <summary>
+            Delegate which calls after turn occurs.
+            </summary>
+            <remarks>
+            null if none.
+            </remarks>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SimpleObjectGenerator`4">
+            <summary>
+            Class for generating new <typeparamref name="ObjType"/>
+            </summary>
+            <typeparam name="ObjType"><see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> to generate to. Should have parameterless constructor.</typeparam>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ObjectGenerator`3">
+            <summary>
+            Class for generating new <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ObjectGenerator`3.GenerateObjects(System.Int32)">
+            <summary>
+            Generates <paramref name="count"/> new <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>s.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ObjectGenerator`3.GenerateObject">
+            <summary>
+            Generate new <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SimpleObjectGenerator`4.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`1,`2,`3})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SimpleObjectGenerator`4.GenerateObject">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ListCell`3">
+            <summary>
+            Primitive but common using realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListCell`3.list">
+            <summary>
+            Content of the cell.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2},`0)">
+            <inheritdoc/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListCell`3.currentAction">
+            <summary>
+            Used for <see cref="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})"/> optimization.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.OnForEach(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <summary>
+            Used for <see cref="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})"/> optimization.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ListCell`3.delegatesList">
+            <summary>
+            For optimization:
+            Foreach <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> in <see cref="T:DCIMAP.GANS.SwarmIntellect.ListCell`3"/>:
+            <see cref="F:System.Tuple`5.V1"/> = <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Turn"/>,
+            <see cref="F:System.Tuple`5.V2"/> = <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.AfterTurn"/>,
+            <see cref="F:System.Tuple`5.V3"/> = <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Eyeshot"/>,
+            <see cref="F:System.Tuple`5.V4"/> = return of <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Turn"/>,
+            <see cref="F:System.Tuple`5.V5"/> = return of <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.AfterTurn"/>,
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.Add(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.Remove(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.OnSerialize">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ListCell`3.OnDeserialized">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.ListCell`3.IsUseless">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.ListCell`3.Turn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.ListCell`3.ApplyTurnEffect">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.ListCell`3.AfterTurn">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectForm">
+            <summary>
+            <see cref="T:DCIMAP.GANS.Basic.LearningForm"/> for <see cref="N:DCIMAP.GANS.SwarmIntellect"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectForm.#ctor(System.Drawing.Size)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="size"><see cref="T:System.Drawing.Size"/> of for for <see cref="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisor"/>'s pannel.</param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectForm.OnSizeChanged(System.EventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3"/> for graph.
+            </summary>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.adjacencyList">
+            <summary>
+            Adjacency list in graph.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.cellConstructor">
+            <summary>
+            Delegate for constructing <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.subMaps">
+            <summary>
+            Buffer for <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph"/>s. For optimisation.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.substrate">
+            <summary>
+            Array of <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> stored in this <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.#ctor(System.Collections.Generic.IList{System.Int32[]},System.Func{DCIMAP.GANS.SwarmIntellect.GraphMap{`0},DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.Cell{DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphMetric,`0}},DCIMAP.GANS.SwarmIntellect.Background{DCIMAP.GANS.SwarmIntellect.GraphCoordinate,`0},DCIMAP.GANS.SwarmIntellect.Ether)">
+            <inheritdoc/>
+            <param name="adjacencyList">This is adjacency list in this <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1"/>.
+            Be carefult: interval of node`s ids should be continuous,
+            and there shouldn't be any loop or multiple edges.</param>
+            <param name="cellConstructor">Delegate for building <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.</param>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.delegates">
+            <summary>
+            For optimization. Emulating events and delegates.
+            One record foreach <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> in <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1"/>
+            <see cref="F:System.Tuple`5.V1"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Turn"/>,
+            <see cref="F:System.Tuple`5.V2"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.ApplyTurnEffect"/>,
+            <see cref="F:System.Tuple`5.V3"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.AfterTurn"/>,
+            <see cref="F:System.Tuple`5.V4"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.IsUseless"/>,
+            <see cref="F:System.Tuple`5.V5"/>=<see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.CollectGarbage">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.GetSubMap(DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphMetric)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphMetric,`0},DCIMAP.GANS.SwarmIntellect.GraphCoordinate})">
+            <inheritdoc/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.cellEmpty">
+            <summary>
+            Decorator for <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s in empty points (in fact <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s for this point does not stored).
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.GetCell(DCIMAP.GANS.SwarmIntellect.GraphCoordinate,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.OnSerialize">
+            <inheridoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.OnDeserialized">
+            <inheridoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.GraphMap`1.Cells">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMap`3"/> for graph. For internal use only.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.map">
+            <summary>
+            Reference to <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1"/> 
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.toGlobal">
+            <summary>
+            List providing conversion local coordinates to global.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.toLocal">
+            <summary>
+            List providing conversion global coordinates to local.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.#ctor(DCIMAP.GANS.SwarmIntellect.GraphMap{`0},DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphMetric)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.GetCell(DCIMAP.GANS.SwarmIntellect.GraphCoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.ToLocal(DCIMAP.GANS.SwarmIntellect.GraphCoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.ToGlobal(DCIMAP.GANS.SwarmIntellect.GraphCoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.Cell{DCIMAP.GANS.SwarmIntellect.GraphCoordinate,DCIMAP.GANS.SwarmIntellect.GraphMetric,`0},DCIMAP.GANS.SwarmIntellect.GraphCoordinate})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.ContainsCoordinates(DCIMAP.GANS.SwarmIntellect.GraphCoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.GraphMap`1.SubMapGraph.Cells">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.LiteListCell`3">
+            <summary>
+            Lite realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>. Smaller than <see cref="T:DCIMAP.GANS.SwarmIntellect.ListCell`3"/>. But realy slower :(
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2},`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.Add(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.Remove(DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.OnSerialize">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.OnDeserialized">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.IsUseless">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.Turn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.ApplyTurnEffect">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.LiteListCell`3.AfterTurn">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Map2D`1">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.MapDirectAccess`3"/> for N^2 space.
+            </summary>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.cellConstructor">
+            <summary>
+            Delegate for constructing <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.substrate">
+            <summary>
+            Contect of the points in <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.xSize">
+            <nheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.ySize">
+            <nheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Map`3.Size"/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.#ctor(System.Int32,System.Int32,System.Func{DCIMAP.GANS.SwarmIntellect.Map2D{`0},DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Cell{DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Metric2D,`0}},DCIMAP.GANS.SwarmIntellect.Background{DCIMAP.GANS.SwarmIntellect.Coordinate2D,`0},DCIMAP.GANS.SwarmIntellect.Ether)">
+            <nheritdoc/>
+            <param name="xSize">Size of <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/> in X dimension.</param>
+            <param name="ySize">Size of <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/> in Y dimension.</param>
+            <param name="cellConstructor">Delegate for constructing <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s.</param>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.delegates">
+            <summary>
+            For optimization. Emulating events and delegates. Also this struct is used for serialization.
+            One record foreach <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> in <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/>
+            <see cref="F:System.Tuple`5.V1"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.Turn"/>,
+            <see cref="F:System.Tuple`5.V2"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.ApplyTurnEffect"/>,
+            <see cref="F:System.Tuple`5.V3"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.AfterTurn"/>,
+            <see cref="F:System.Tuple`5.V4"/>=<see cref="P:DCIMAP.GANS.SwarmIntellect.Cell`3.IsUseless"/>,
+            <see cref="F:System.Tuple`5.V5"/>=<see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.submapDecorator">
+            <summary>
+            Decorator of this map.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.CollectGarbage">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.GetSubMap(DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Metric2D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Metric2D,`0},DCIMAP.GANS.SwarmIntellect.Coordinate2D})">
+            <inheritdoc/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.cellEmpty">
+            <summary>
+            Decorator for <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s in empty points (in fact <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>s for this point does not stored).
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.GetCell(DCIMAP.GANS.SwarmIntellect.Coordinate2D,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.OnSerialize">
+            <inheridoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.OnDeserialized">
+            <inheridoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map2D`1.Cells">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.SubMapDecorator`3"/> for N^2 space. For internal use only.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.substrate">
+            <summary>
+            Reference to <see cref="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.substrate"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.xSize">
+            <summary>
+            Simmilar to <see cref="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.xSize"/>
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.ySize">
+            <summary>
+            Simmilar to <see cref="F:DCIMAP.GANS.SwarmIntellect.Map2D`1.ySize"/>
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.#ctor(DCIMAP.GANS.SwarmIntellect.Map2D{`0})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.ToLocal(DCIMAP.GANS.SwarmIntellect.Coordinate2D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.ToGlobal(DCIMAP.GANS.SwarmIntellect.Coordinate2D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.ContainsCoordinates(DCIMAP.GANS.SwarmIntellect.Coordinate2D)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.Cell{DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Metric2D,`0},DCIMAP.GANS.SwarmIntellect.Coordinate2D})">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Map2D`1.SubMapDecorator2D.Cells">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ObjectMounter3D`1">
+            <summary>
+            Class for mounting <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> to the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/>.
+            </summary>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ObjectMounter3D`1.random">
+            <summary>
+            <see cref="T:System.Random"/> for internal use.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ObjectMounter3D`1.AddObjectAnywear(DCIMAP.GANS.SwarmIntellect.Map{DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Metric3D,`0},DCIMAP.GANS.SwarmIntellect.IObject{DCIMAP.GANS.SwarmIntellect.Coordinate3D,DCIMAP.GANS.SwarmIntellect.Metric3D,`0})">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.StubEther">
+            <summary>
+            Stub for situation when <see cref="T:DCIMAP.GANS.SwarmIntellect.Ether"/>'s functionality is useless.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.StubEther.AddMessage(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.StubEther.AddMessage(System.String,System.Object,System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.StubEther.RemoveMessage(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.StubEther.Clean">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.StubEther.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.StubEther.Item(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.GraphCoordinate">
+            <summary>
+            Realization of <see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> for <see cref="T:DCIMAP.GANS.SwarmIntellect.GraphMap`1"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.GraphCoordinate.N">
+            <summary>
+            Number of node.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphCoordinate.#ctor(System.Int32)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="coordinate">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.GraphCoordinate.N"/>.</param>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphCoordinate.Equals(DCIMAP.GANS.SwarmIntellect.ICoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.GraphCoordinate.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3">
+            <summary>
+            Simple creature which behavior depends only on environment.
+            And so it should be only one <see cref="T:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3"/> in one <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.map">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.Map"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.background">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Background`2"/> of the <see cref="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.Map"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.ether">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Ether"/> of the <see cref="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.Map"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.eyeshot">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.Eyeshot"/>.
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.OnAfterTurn(DCIMAP.GANS.SwarmIntellect.Cell{`0,`1,`2})">
+            <summary>
+            Is used in <see cref="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.AfterTurn"/>.
+            Controls that there is only one creature of simmilar type in <paramref name="cell"/>.
+            Remove all except first.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.Map">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.Eyeshot">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.BeforeTurn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.Turn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.SimpleCreature`3.AfterTurn">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.AbstractObject`3">
+            <summary>
+            Object for replacing delegate-based behaviour to standart inheritance-based.
+            Be careful, this behaviour is rather slower.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.map">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Map"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.background">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Background`2"/> of the <see cref="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Map"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.ether">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Ether"/> of the <see cref="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Map"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.eyeshot">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Eyeshot"/>.
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.OnAfterTurn(DCIMAP.GANS.SwarmIntellect.Cell{`0,`1,`2})">
+            <summary>
+            Is used in <see cref="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.AfterTurn"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.OnBeforeTurn">
+            <summary>
+            Is used in <see cref="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.BeforeTurn"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.OnTurn(DCIMAP.GANS.SwarmIntellect.SubMap{`0,`1,`2})">
+            <summary>
+            Is used in <see cref="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Turn"/>.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Map">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Eyeshot">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.BeforeTurn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.Turn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.AbstractObject`3.AfterTurn">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Map2DSupervisorPanel">
+            <summary>
+            <see cref="T:System.Windows.Forms.Panel"/> for <see cref="N:DCIMAP.GANS.SwarmIntellect"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2DSupervisorPanel.brush">
+            <summary>
+            <see cref="T:System.Drawing.Brush"/> for painting.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2DSupervisorPanel.pen">
+            <summary>
+            <see cref="T:System.Drawing.Pen"/> for painting.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2DSupervisorPanel.drawBackground">
+            <summary>
+            Reference to <see cref="M:DCIMAP.GANS.SwarmIntellect.Background`2.Draw(System.Drawing.Graphics)"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Map2DSupervisorPanel.forEach">
+            <summary>
+            Reference to <see cref="M:DCIMAP.GANS.SwarmIntellect.Map`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2DSupervisorPanel.Draw(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Map2DSupervisorPanel.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisorInfo">
+            <summary>
+            <see cref="T:DCIMAP.GANS.Basic.LearningSupervisorInfo"/> for <see cref="N:DCIMAP.GANS.SwarmIntellect"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisorInfo.DrawBackground">
+            <summary>
+            Reference to <see cref="M:DCIMAP.GANS.SwarmIntellect.Background`2.Draw(System.Drawing.Graphics)"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisorInfo.ForEach">
+            <summary>
+            Reference to <see cref="M:DCIMAP.GANS.SwarmIntellect.Map`3.ForEach(System.Action{DCIMAP.GANS.SwarmIntellect.IObject{`0,`1,`2},`0})"/>.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.SwarmIntellectSupervisorInfo.#ctor(System.Action{System.Drawing.Graphics},System.Action{System.Object})">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.TurnActionInfo`3">
+            <summary>
+            Struct that represents action that <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/>
+            made during <see cref="P:DCIMAP.GANS.SwarmIntellect.IObject`3.Turn"/>.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.TurnActionInfo`3.addObjects">
+            <summary>
+            Array of pairs represents what object and where should be added.
+            </summary>
+            <remarks>
+            null if none
+            </remarks>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.TurnActionInfo`3.hasMoved">
+            <summary>
+            Flag which shows if <see cref="F:DCIMAP.GANS.SwarmIntellect.TurnActionInfo`3.moveTo"/> contains actual information.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.TurnActionInfo`3.moveTo">
+            <summary>
+            Coordinates of cell to move to.
+            </summary>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Coordinate2D">
+            <summary>
+            Represents <see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> in N^2 space.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Coordinate2D.X">
+            <summary>
+            X coordinate.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Coordinate2D.Y">
+            <summary>
+            Y coordinate.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Coordinate2D.Equals(DCIMAP.GANS.SwarmIntellect.ICoordinate)">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Coordinate2D.#ctor(System.Int32,System.Int32)">
+            <param name="x">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Coordinate2D.X"/>.</param>
+            <param name="y">Value of <see cref="F:DCIMAP.GANS.SwarmIntellect.Coordinate2D.Y"/>.</param>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.Message`3">
+            <summary>
+            Message in the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map`3"/>'s <see cref="T:DCIMAP.GANS.SwarmIntellect.Cell`3"/> - pheromone.
+            </summary>
+            <typeparam name="C"><see cref="T:DCIMAP.GANS.SwarmIntellect.ICoordinate"/> which represents coordinates of space.</typeparam>
+            <typeparam name="M"><see cref="T:DCIMAP.GANS.SwarmIntellect.IMetric`1"/> which represents metric in space.</typeparam>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Message`3.map">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Message`3.Map"/>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Message`3.background">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Background`2"/> of the <see cref="P:DCIMAP.GANS.SwarmIntellect.Message`3.Map"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Message`3.ether">
+            <summary>
+            <see cref="T:DCIMAP.GANS.SwarmIntellect.Ether"/> of the <see cref="P:DCIMAP.GANS.SwarmIntellect.Message`3.Map"/>.
+            </summary>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.Message`3.eyeshot">
+            <inheritdoc cref="P:DCIMAP.GANS.SwarmIntellect.Message`3.Eyeshot"/>.
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Message`3.#ctor(DCIMAP.GANS.SwarmIntellect.Map{`0,`1,`2})">
+            <inheritdoc/>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Message`3.Combine(DCIMAP.GANS.SwarmIntellect.Message{`0,`1,`2})">
+            <summary>
+            Add <paramref name="additionalMessage"/> to the message's content.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.Message`3.OnAfterTurn(DCIMAP.GANS.SwarmIntellect.Cell{`0,`1,`2})">
+            <summary>
+            Is used in <see cref="P:DCIMAP.GANS.SwarmIntellect.Message`3.AfterTurn"/>.
+            Controls that there is only one Message of simmilar type in <paramref name="cell"/>.
+            Collects all information in first and remove others.
+            </summary>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Message`3.Map">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Message`3.Eyeshot">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Message`3.BeforeTurn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Message`3.Turn">
+            <inheritdoc/>
+        </member>
+        <member name="P:DCIMAP.GANS.SwarmIntellect.Message`3.AfterTurn">
+            <inheritdoc/>
+        </member>
+        <member name="T:DCIMAP.GANS.SwarmIntellect.ObjectMounter2D`1">
+            <summary>
+            Class for mounting <see cref="T:DCIMAP.GANS.SwarmIntellect.IObject`3"/> to the <see cref="T:DCIMAP.GANS.SwarmIntellect.Map2D`1"/>.
+            </summary>
+            <typeparam name="T">Type of data in background.</typeparam>
+        </member>
+        <member name="F:DCIMAP.GANS.SwarmIntellect.ObjectMounter2D`1.random">
+            <summary>
+            <see cref="T:System.Random"/> for internal use.
+            </summary>
+        </member>
+        <member name="M:DCIMAP.GANS.SwarmIntellect.ObjectMounter2D`1.AddObjectAnywear(DCIMAP.GANS.SwarmIntellect.Map{DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Metric2D,`0},DCIMAP.GANS.SwarmIntellect.IObject{DCIMAP.GANS.SwarmIntellect.Coordinate2D,DCIMAP.GANS.SwarmIntellect.Metric2D,`0})">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

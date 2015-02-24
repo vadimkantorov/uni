@@ -1,0 +1,1 @@
+game L battlemap.bmp 1 log.txt
