@@ -1,2 +1,2 @@
 # uni
-highschool
+Various small programs, university assignments and such
